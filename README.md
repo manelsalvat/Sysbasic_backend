@@ -1,6 +1,6 @@
 Sysbasic_backend
 ================
-This is a shcool project for web design course
+This is a school project for web design course
 ---- 
 Curs diseny web
 ----
