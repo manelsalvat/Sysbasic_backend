@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Clase producto que extiende de Entity relacionado con la tabla productos
  *
  * @author azrak 2014
  */
@@ -19,23 +20,26 @@ class Entity {
     public function store() {
         $db = new db();
         $db->setTable('productos');
+        $db->add_new($this);
     }
 
     public function update() {
         $db = new db();
         $db->setTable($this->table_name);
-        $db->update_by_columns_name($this->getColumnNames(), $this->getColumnValue());
+        $db->update_by_columns_name($this->getColumnsName(), $this->getColumnValues());
     }
 
     function find_By_ID($id) {
-        
+        $db = new db();
+        $db->setTable($this->table_name);
+        return $db->find_by_ID($this->codigo, $id);
     }
 
-    function getColumnNames() {
+    function getColumnsName() {
         return array_keys(get_class_vars(get_class($this)));
     }
 
-    public function getColumnValue() {
+    public function getColumnValues() {
         return array_values(get_class_vars(get_class($this)));
     }
 
