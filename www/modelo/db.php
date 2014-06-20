@@ -1,5 +1,7 @@
 <?php
 
+use Entity;
+
 class db {
 
     public $con;
@@ -100,6 +102,17 @@ class db {
         $query->execute(array(':value' => $value));
         $query = null;
     }
+    
+    function find_by_ID($key_name, $value) {
+
+        $sql = "SELECT * FROM '.$this->table_name.' WHERE '.$key_name.' = :value";
+        $query = self::$db->prepare($sql);
+        $query->execute(array(':value' => $value));
+        $query = null;
+        
+        return $query->fetchColumn();
+        
+    }
 
     // get limited list page=offset
     function getList_for_pagination($page, $limit) {
@@ -118,6 +131,22 @@ class db {
         }
 
         return $query->fetchAll();
+    }
+    
+    function add_new(Entity $entidad) {
+        
+        try {
+            $sql = "INSERT INTO $this->table_name"
+                    . " VALUES ('.$entidad->getColumnsName().') ";
+
+            $query = $this->con->prepare($sql);
+            $ok = $query->execute();
+
+            $query = null;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            $query = null;
+        }
     }
 
 }
