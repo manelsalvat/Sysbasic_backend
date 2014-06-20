@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Clase producto que extiende de Entity relacionado con la tabla productos
- *
  * @author azrak 2014
  */
 require_once './db.php';
