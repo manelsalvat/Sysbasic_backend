@@ -3,42 +3,38 @@
 /**
  * @author azrak 2014
  */
-require_once './db.php';
-
 class Entity {
 
-    private $codigo;
-    private $table_name;
-
-    function __construct($id, $table) {
-        $this->codigo = $id;
-        $this->table_name = $table;
+    function __construct() {
+        
     }
 
-    public function store() {
+    public function save() {
         $db = new db();
-        $db->setTable('productos');
-        $db->add_new($this);
+        $db->setTable(get_called_class());
+        $db->add_new($this->getProperty_Values());
     }
 
     public function update() {
         $db = new db();
-        $db->setTable($this->table_name);
-        $db->update_by_columns_name($this->getColumnsName(), $this->getColumnValues());
+        $db->setTable(get_called_class());
+        $db->update_by_columns_name($this->getProperty(), $this->getProperty_Values());
     }
 
-    function find_By_ID($id) {
+    public function get_from_table($id) {
         $db = new db();
-        $db->setTable($this->table_name);
-        return $db->find_by_ID($this->codigo, $id);
+        $db->setTable(get_called_class());
+        return $db->find_by_Column($this, 'codigo', $id);
     }
 
-    function getColumnsName() {
-        return array_keys(get_class_vars(get_class($this)));
+    // return propriety name as array of string
+    public function getProperty() {
+        return array_keys(get_object_vars($this)); // or get_class_vars(get_called_class()));
     }
 
-    public function getColumnValues() {
-        return array_values(get_class_vars(get_class($this)));
+    // return propriety value as array of mixed
+    public function getProperty_Values() {
+        return array_values(get_object_vars($this));
     }
 
 }
