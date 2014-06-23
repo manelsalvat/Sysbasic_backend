@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/sysBasicPro/dbManager.php</file>
-            <file>file:/C:/xampp/htdocs/sysBasicPro/modelo/Productos.php</file>
-            <file>file:/C:/xampp/htdocs/sysBasicPro/index.php</file>
+            <file>file:/C:/xampp/htdocs/sysBasicPro/modelo/db.php</file>
+            <file>file:/C:/xampp/htdocs/sysBasicPro/modelo/Entity.php</file>
+            <file>file:/C:/xampp/htdocs/sysBasicPro/modelo/Producto.php</file>
         </group>
     </open-files>
 </project-private>
