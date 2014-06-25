@@ -4,6 +4,8 @@ function __autoload($className) {
     include_once("modelo/$className.php");
 }
 
+View::getHeader();
+
 $patatas = new Productos();
 
 //$patatas->setCodigo(1)
