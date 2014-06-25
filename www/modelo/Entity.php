@@ -26,6 +26,12 @@ class Entity {
         db::setTable(get_called_class());
         return db::find_by_Column($this, 'codigo', $id);
     }
+    
+    public function get_list($page,$limit) {
+        db::init();
+        db::setTable(get_called_class());
+        return db::getList_for_pagination($page, $limit);
+    }
 
     // return propriety name as array of string
     public function getProperty() {
