@@ -37,9 +37,13 @@ class View {
         
     }
     
-    public static function showEntity($name , $data) {
+    public static function showEntity($entity , $data) {
         // TODO show page based on entity name and passed data.
+        self::$data=$data;
+        self::showTemplate($entity . 'html');
+       
     }
+   
 
     public static function delData() {
         self::$data = NULL;
