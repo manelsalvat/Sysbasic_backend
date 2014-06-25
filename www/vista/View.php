@@ -31,19 +31,14 @@ class View {
 
         return $header;
     }
-    
-    public static function showHome() {
-        self::showTemplate('home.html');
-        
-    }
-    
-    public static function showEntity($entity , $data) {
+
+    public static function showEntity($entity) {
         // TODO show page based on entity name and passed data.
-        self::$data=$data;
+        self::$data['header'] = self::getHeader();
+        self::$data = $data;
+
         self::showTemplate($entity . 'html');
-       
     }
-   
 
     public static function delData() {
         self::$data = NULL;
