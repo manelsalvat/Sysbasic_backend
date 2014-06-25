@@ -9,13 +9,13 @@ function __autoload($className) {
     include_once("modelo/$className.php");
 }
 
-if (filter_input(INPUT_POST, 'action')) {
-    $actions_array = filter_input_array(INPUT_POST);
+if (filter_input(INPUT_GET, 'action')) {
+    $actions_array = filter_input_array(INPUT_GET);
 
-    switch (filter_input(INPUT_POST, 'action')) {
+    switch (filter_input(INPUT_GET, 'action')) {
 
         case 'login':
-            authenticate(filter_input(INPUT_POST, 'usuario'), filter_input(INPUT_POST, 'password'));
+            authenticate(filter_input(INPUT_GET, 'usuario'), filter_input(INPUT_GET, 'password'));
             break;
 
         case 'logout':
@@ -27,7 +27,15 @@ if (filter_input(INPUT_POST, 'action')) {
             break;
 
         case 'show':
-            $entity = filter_input(INPUT_POST, 'show');
+            $entity = filter_input(INPUT_GET, 'show');
+            controler::setEntity($entity);
+            $data = controler::getData($entity);
+            View::setData($data);
+            View::showEntity($entity);
+            break;
+        
+        case 'home':
+            $entity = filter_input(INPUT_GET, 'show');
             controler::setEntity($entity);
             $data = controler::getData($entity);
             View::setData($data);
@@ -63,9 +71,11 @@ function authenticate($user, $pass) {
             //if (!(session_status() === PHP_SESSION_ACTIVE)) {
             session_start();
             //}
-            $_SESSION['pass'] = $res->password;
-            $_SESSION['user'] = $res[0]->usuario;
-            header("refresh:0,url=index.html");
+            $data['user']=$_SESSION['user'] = $res->usuario;
+            $data['pass']=$_SESSION['pass'] = $res->password;
+            View::setData($data);
+            View::showHome();
+            
         } else {
             echo "<script type='text/javascript'> alert('contaseña incorrecto'); </script>";
             header("refresh:0,url=index.html");
