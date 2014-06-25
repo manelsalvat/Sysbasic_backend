@@ -26,7 +26,13 @@ if (filter_input(INPUT_POST, 'action')) {
             header("refresh:0,url=index.html");
             break;
 
-
+        case 'show':
+            $entity = filter_input(INPUT_POST, 'show');
+            controler::setEntity($entity);
+            $data = controler::getData($entity);
+            View::setData($data);
+            View::showEntity($entity);
+            break;
 
         default:
             header("refresh:0,url=../../process.php");
@@ -57,7 +63,7 @@ function authenticate($user, $pass) {
             //if (!(session_status() === PHP_SESSION_ACTIVE)) {
             session_start();
             //}
-            $_SESSION['secret'] = $res->password;
+            $_SESSION['pass'] = $res->password;
             $_SESSION['user'] = $res[0]->usuario;
             header("refresh:0,url=index.html");
         } else {
