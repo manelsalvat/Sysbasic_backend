@@ -9,8 +9,8 @@ use Entity;
  */
 class Categorias extends Entity {
 
-    private $codigo;
-    private $nombre;
+    public $codigo;
+    public $nombre;
     
     function __construct() {
         

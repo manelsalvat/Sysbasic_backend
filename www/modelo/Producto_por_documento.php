@@ -9,16 +9,16 @@ use Entity;
  */
 class Producto_por_documento extends Entity {
 
-    private $numero_documento;
-    private $codigo_producto;
-    private $nombre_producto;
-    private $marca_producto;
-    private $descripcion_producto;
-    private $precio_producto;
-    private $cantidad;
-    private $iva;
-    private $recargo_equivalencia;
-    private $descuento;
+    public $numero_documento;
+    public $codigo_producto;
+    public $nombre_producto;
+    public $marca_producto;
+    public $descripcion_producto;
+    public $precio_producto;
+    public $cantidad;
+    public $iva;
+    public $recargo_equivalencia;
+    public $descuento;
     
 
     
