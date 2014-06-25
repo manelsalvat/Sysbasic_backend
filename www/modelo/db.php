@@ -2,11 +2,11 @@
 
 class db {
 
-    private $con;
-    private $table_name;
+    private static $con;
+    private static $table_name;
 
-    function __construct() {
-        $this->con = NULL;
+    static function init() {
+        self::$con = NULL;
         $settings = parse_ini_file('config.ini');
 
         $dns = $settings['driver'] . ':host=' . $settings['host'] . ';dbname=' . $settings['db_name'];
@@ -14,21 +14,21 @@ class db {
         $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
         try {
-            $this->con = new PDO($dns, $settings['user'], $settings['pass'], $options);
+            self::$con = new PDO($dns, $settings['user'], $settings['pass'], $options);
         } catch (PDOException $e) {
             echo $e->getMessage();
-            $this->con = null;
+            self::$con = null;
         }
     }
 
-    public function setTable($table) {
-        $this->table_name = $table;
+    public static function setTable($table) {
+        self::$table_name = $table;
     }
 
-    function get_values_by_tableName($table_name) {
+    public static function get_values_by_tableName($table_name) {
         try {
             $sql = "SELECT * FROM '.$table_name.'";
-            $query = $this->con->prepare($sql);
+            $query = self::$con->prepare($sql);
             $query->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -40,7 +40,7 @@ class db {
 
     //Params1: name of columns to update ,
     //Params2: new values as array in same size.
-    function update_by_columns_name($columns_array_names, $new_values_array) {
+    public static function update_by_columns_name($columns_array_names, $new_values_array) {
 
         //shift and get the first element as key 
         $key = array_shift($columns_array_names);
@@ -54,12 +54,12 @@ class db {
         $bind_columns = implode(", ", $columns_array_names);
 
         try {
-            $sql = "UPDATE $this->table_name "
-                    . " SET  $bind_columns  "
+            $sql = "UPDATE ".
+            self::$table_name. " SET  $bind_columns  "
                     . " WHERE  $key  =  $key_value ";
 
 
-            $query = $this->con->prepare($sql);
+            $query = self::$con->prepare($sql);
             $ok = $query->execute($new_values_array);
 
             $query = null;
@@ -69,12 +69,12 @@ class db {
         }
     }
 
-    function delete_by_ID($key_name, $value) {
+    public static function delete_by_ID($key_name, $value) {
 
         try {
 
-            $sql = "DELETE FROM '.$this->table_name.' WHERE '.$key_name.' = :value";
-            $query = $this->con->prepare($sql);
+            $sql = "DELETE FROM '.self::table_name.' WHERE '.$key_name.' = :value";
+            $query = self::$con->prepare($sql);
             $query->execute(array(':value' => $value));
             $query = null;
         } catch (PDOException $e) {
@@ -83,11 +83,11 @@ class db {
         }
     }
 
-    function find_by_Column(&$class, $column_name, $value) {
+    public static function find_by_Column(&$class, $column_name, $value) {
 
         try {
-            $sql = "SELECT * FROM $this->table_name WHERE $column_name = :value";
-            $query = $this->con->prepare($sql);
+            $sql = "SELECT * FROM ". self::$table_name." WHERE $column_name = :value";
+            $query = self::$con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_INTO, $class);
             $query->execute(array(':value' => $value));
         } catch (PDOException $e) {
@@ -98,14 +98,14 @@ class db {
     }
 
     // get limited list page=offset
-    function getList_for_pagination($page, $limit) {
+    public static function getList_for_pagination($page, $limit) {
 
         try {
 
             $start = $page * $limit;
 
-            $this->con->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-            $sth = $this->con->prepare("SELECT * FROM '.$this->table_name.' LIMIT ?,?");
+            self::$con->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+            $sth = self::$con->prepare("SELECT * FROM ".self::table_name." LIMIT ?,?");
             $sth->execute(array($start, $limit));
             $query = null;
         } catch (PDOException $e) {
@@ -116,7 +116,7 @@ class db {
         return $query->fetchAll();
     }
 
-    function add_new($values) {
+    public static function add_new($values) {
 
         // add <''> to every array value
         array_walk($values, function(&$item) {
@@ -124,9 +124,9 @@ class db {
         });
         $sql_columns_value = implode(",", $values);
         try {
-            $sql = "INSERT INTO  $this->table_name   VALUES (  $sql_columns_value  ) ";
+            $sql = "INSERT INTO  ".self::$table_name ."  VALUES (  $sql_columns_value  ) ";
 
-            $query = $this->con->prepare($sql);
+            $query = self::$con->prepare($sql);
             $ok = $query->execute();
 
             $query = null;
