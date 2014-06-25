@@ -24,6 +24,9 @@ class db {
     public static function setTable($table) {
         self::$table_name = $table;
     }
+    public static function getConnection() {
+        return self::$con;
+    }
 
     public static function get_values_by_tableName($table_name) {
         try {
