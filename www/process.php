@@ -26,22 +26,7 @@ if (filter_input(INPUT_POST, 'action')) {
             header("refresh:0,url=index.html");
             break;
 
-        case 'show':
-            page_controler::init();
-            page_controler::shwNotas($actions_array['dni'], $actions_array['apellido']);
-            break;
 
-        case 'add_user':
-            $empty = (empty($actions_array['dni']) || empty($actions_array['apellido']) || empty($actions_array['tipo_usuario']) );
-            if ($empty) {
-                echo "<script type='text/javascript'> alert('introduzca todos los datos !'); </script>";
-                header("refresh:0,url=../../process.php");
-            } else {
-                db_manager::connect();
-                db_manager::addUser($actions_array['dni'], $actions_array['apellido'], $actions_array['tipo_usuario']);
-                header("refresh:0,url=../../process.php");
-            }
-            break;
 
         default:
             header("refresh:0,url=../../process.php");
@@ -49,7 +34,7 @@ if (filter_input(INPUT_POST, 'action')) {
     }
 }
 
-function authenticate($_dni, $_apellido) {
+function authenticate($user, $pass) {
 
 
     $res = NULL;
@@ -57,26 +42,26 @@ function authenticate($_dni, $_apellido) {
 
         db::init();
         db::setTable('usuarios');
-        $sql = "SELECT * FROM usuarios WHERE dni = :dni";
-        $query = db_manager::$db->prepare($sql);
-        $query->execute(array(':dni' => $_dni));
-        $res = $query->fetchAll();
+        $sql = "SELECT * FROM usuarios WHERE password = :user";
+        $query = db::getConnection()->prepare($sql);
+        $query->execute(array(':user' => $user));
+        $res = $query->fetchColumn();
     } catch (PDOException $e) {
         echo $e->getMessage();
         $query = null;
     }
     if ($res) {
 
-        if ($res[0]->apellido == $_apellido) {
+        if (crypt($res->password, $pass) == $pass) {
             //setcookie($_dni, $_apellido, time()+3600);
             //if (!(session_status() === PHP_SESSION_ACTIVE)) {
             session_start();
             //}
-            $_SESSION['loged'] = $_dni;
-            $_SESSION['apellido'] = $res[0]->apellido;
-            page_controler::showPage();
+            $_SESSION['secret'] = $res->password;
+            $_SESSION['user'] = $res[0]->usuario;
+            header("refresh:0,url=index.html");
         } else {
-            echo "<script type='text/javascript'> alert('apellido incorrecto'); </script>";
+            echo "<script type='text/javascript'> alert('contaseña incorrecto'); </script>";
             header("refresh:0,url=index.html");
         }
     } else {
