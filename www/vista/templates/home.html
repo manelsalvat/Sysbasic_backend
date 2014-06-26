@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8">
-        <title>sysBasicPro</title>
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <meta name = "description" content = "">
-        <meta name = "author" content = "">
-        <link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
-        <script type = "text/javascript" src = "bootstrap/js/jquery.min.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    </head>
+    {header}
 
     <body>
         <div class="navbar navbar-default navbar-inverse navbar-static-top">
@@ -32,8 +23,13 @@
                     <div class="col-md-12 pull-right">
                         <div class="col-md-3">
                             <img src="imgs/logo.png" class="img-responsive img-circle" width="200">
-                        </div>
+                            
+                        </div> 
+                        <form method="POST" action="process.php">
+                            <input type="hidden" name="action" value="show">
+                            
                         <ul class="nav nav-pills pull-left navbar-inverse menu-top">
+                           
                             <li>
                                 <a href="process.php/?action=home">Inicio</a>
                             </li>
@@ -46,7 +42,7 @@
                                 <a href="process.php/?action=show&show=clientes">Clientes</a>
                             </li>
                             <li>
-                                <a href="process.php/?action=show&show=productos">Productos</a>
+                                <button name="show" value="productos">Productos</button>
                             </li>
                             <li>
                                 <a href="process.php/?action=show&show=proveedores">Proveedores</a>
@@ -60,8 +56,8 @@
                             <li>
                                 <a href="process.php/?action=show&show=facturas">Facturas</a>
                             </li>
-
-                        </ul>
+                           
+                        </ul> </form>
                         <div class="nav nav-pills pull-right navbar-inverse menu-top">
                             <p class="label label-sm"><b>{user}</b>
                             </p><a class="btn btn-default btn-sm"  href="process.php/?action=logout">Salir</a>
