@@ -12,14 +12,6 @@ class View {
         self::$data = $data;
     }
 
-    public static function showEntity($entity) {
-        // TODO show page based on entity name and passed data.
-        self::$data['header'] = self::getHeader();
-        self::$data = $data;
-
-        self::showTemplate($entity . 'html');
-    }
-
     public static function delData() {
         self::$data = NULL;
     }
@@ -36,12 +28,34 @@ class View {
         }
     }
 
-    public static function getHeader() {
+    public static function getEntity_table($entity) {
+        $data = NULL;
+        $table_head_rows = NULL;
+        $table_body_rows = NULL;
 
-        $header = '';
+        $entity_class = $entity();
+
+        $rows = $entity_class->get_list($page, $limit);
+        $prop = $entity_class->getProperty();
+        $values = $entity_class->getProperty_Values();
+
+        foreach ($prop as $th) {
+            $table_head_rows = '<th>' . $th . '</th>';
+        }
+        $data['table_head_tr'] = $table_head_rows;
 
 
-        return $header;
+
+        foreach ($rows as $rows) {
+            $table_body_td = '';
+            foreach ($values as $value) {
+                $table_body_td.= '<td>' . $value . '</td>';
+            }
+            $table_body_rows = '<tr>' . $table_body_td . '</tr>';
+        }
+        $data['table_body_rows'] = $table_body_rows;
+
+        return $data;
     }
 
     public static function getCategory_menu($category_data) {
@@ -121,36 +135,6 @@ class View {
             </div> ';
 
         return $grid;
-    }
-
-    public static function getEntity_table($entity) {
-        $data = NULL;
-        $table_head_rows = NULL;
-        $table_body_rows = NULL;
-
-        $entity_class = $entity();
-
-        $rows = $entity_class->get_list($page, $limit);
-        $prop = $entity_class->getProperty();
-        $values = $entity_class->getProperty_Values();
-
-        foreach ($prop as $th) {
-            $table_head_rows = '<th>' . $th . '</th>';
-        }
-        $data['table_head_tr'] = $table_head_rows;
-
-
-
-        foreach ($rows as $rows) {
-            $table_body_td = '';
-            foreach ($values as $value) {
-                $table_body_td.= '<td>' . $value . '</td>';
-            }
-            $table_body_rows = '<tr>' . $table_body_td . '</tr>';
-        }
-        $data['table_body_rows'] = $table_body_rows;
-
-        return $data;
     }
 
 }
