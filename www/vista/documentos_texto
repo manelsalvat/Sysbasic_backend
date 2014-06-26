@@ -1,0 +1,36 @@
+documentos.tipo
+documentos.numero
+documentos.fecha
+documentos.importe
+documentos.nif_usuario
+documentos.nif_cliente
+
+clientes.nif
+clientes.nombre
+clientes.apellidos
+clientes.direccion
+clientes.CP
+clientes.poblacion
+clientes.telefono
+clientes.mail
+clientes.imagen
+clientes.domicilio_pago
+clientes.activo
+clientes.tipo_cliente
+
+presupuestos.numero_documento
+presupuestos.numero_presupuesto
+presupuestos.dias_de_validez_presupuesto
+
+	pedidos.numero_documento
+	pedidos.numero_pedido
+	pedidos.direccion_entrega_pedido
+	pedidos.CP_entrega_pedido
+pedidos.poblacion_entrega_pedido
+pedidos.telefono_entrega_pedido
+
+facturas.numero_documento
+facturas.numero_factura
+facturas.tipo_de_pago
+facturas.vencimiento
+facturas.domicilio_pago
