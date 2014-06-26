@@ -32,11 +32,15 @@ if (filter_input(INPUT_GET, 'action')) {
             $data = View::getEntity_table($entity);
             $data['category_menu'] = View::getCategory_menu($category_data);
             View::setData($data);
-            View::showEntity($entity);
+            View::showTemplate($entity.'html');
             break;
 
         case 'save':
-
+            $entity = filter_input(INPUT_GET, 'show');
+            break;
+        
+        case 'update':
+            $entity = filter_input(INPUT_GET, 'show');
             break;
 
         default:
