@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>sysBasicPro</title>
+    <meta name="description" content="">
+    <meta name="author" content="xxx">
+</head>
+<body>
+	<div id='logo'><img src='..\..\imgs\logo.png'> {Nom de l'empresa}</div>
+
+	<div id='cabecera'>
+	<table border=1>
+		<!-- Validez = {documentos.fecha} + {presupuestos.dias_de_validez_presupuesto}-->
+		<tr><td>Documento número</td><td>{pedidos.numero_documento}</td><td>Pedido número</td><td>{pedidos.numero_pedido}</td><td>Fecha</td><td>{documentos.fecha}</td><td>Fecha entrega</td><td>{entrega}</td></tr>
+		<tr><td>Cliente</td><td>{clientes.nif}</td><td colspan='4'>{clientes.nombre}</td>
+		<tr><td>Dirección entrega</td><td>{pedidos.direccion_entrega_pedido}</td><td>CP</td><td>{pedidos.CP_entrega_pedido}</td><td>Población</td><td>{pedidos.poblacion_entrega_pedido}</td><td>Teléfono</td><td>{pedidos.telefono_entrega_pedido}</td></tr>
+		
+	</table>
+	</div>
+
+	<div id='contenido'>
+	{lineas_de_producto}
+	</div>
+
+	<div id='pie'>
+		<!--<table border=1>
+		<tr><td>Total bruto</td><td>{TBrut}</td><td>Total IVA</td><td>{Tiva}</td><td>Importe total</td><td>{Total}</td></tr>
+		</table>-->
+	</div>
+
+</body>
+</html>
