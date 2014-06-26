@@ -33,11 +33,12 @@ if (filter_input(INPUT_GET, 'action')) {
             View::setData($data);
             View::showEntity($entity);
             break;
-        
+
         case 'home':
-            $entity = filter_input(INPUT_GET, 'show');
-            controler::setEntity($entity);
-            $data = controler::getData($entity);
+            $category_data = db::get_values_by_tableName('categorias');
+            $data['user'] = $_SESSION['user'];
+            $data['pass'] = $_SESSION['pass'];
+            $data['category_menu'] = View::getCategory_menu($category_data);
             View::setData($data);
             View::showEntity($entity);
             break;
@@ -71,11 +72,10 @@ function authenticate($user, $pass) {
             //if (!(session_status() === PHP_SESSION_ACTIVE)) {
             session_start();
             //}
-            $data['user']=$_SESSION['user'] = $res->usuario;
-            $data['pass']=$_SESSION['pass'] = $res->password;
+            $data['user'] = $_SESSION['user'] = $res->usuario;
+            $data['pass'] = $_SESSION['pass'] = $res->password;
             View::setData($data);
             View::showHome();
-            
         } else {
             echo "<script type='text/javascript'> alert('contaseña incorrecto'); </script>";
             header("refresh:0,url=index.html");
