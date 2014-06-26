@@ -2,13 +2,13 @@
 <form method='POST' action='app.php'>
 	<input type='hidden' name='action' value='login2' />
     <label>Codigo producto</label>
-    <input type='text' name='productos.codigo' value='' /><br>
+    <input type='text' name='productos.codigo' maxlenght='10' value='' /><br>
     <label>Nombre producto</label>
-    <input type='text' name='productos.nombre' value='' /><br>
+    <input type='text' name='productos.nombre' size='30' value='' /><br>
     <label>Marca</label>
-    <input type='text' name='productos.marca' value='' /><br>
+    <input type='text' name='productos.marca' size='30' value='' /><br>
     <label>Descripci&oacute;n</label>
-    <input type='text' name='productos.descripcion' value='' /><br>
+    <input type='text' name='productos.descripcion' maxlenght='255' value='' /><br>
     <label>Precio</label>
     <input type='text' name='productos.precio' value='' /><br>
     <label>Tipo IVA</label>
@@ -16,11 +16,11 @@
     <label>Descuento</label>
     <input type='text' name='productos.descuento' value='' /><br>
     <label>Unidad de medida</label>
-    <input type='text' name='productos.unidad_de_medida' value='' /><br>
+    <input type='text' name='productos.unidad_de_medida' size='10' value='' /><br>
     <label>Estoc</label>
-    <input type='text' name='productos.estoc' value='' /><br>
+    <input type='text' name='productos.estoc' size='10' value='' /><br>
     <label>Categoria producto</label>
-    <input type='text' name='productos.id_categoria' value='' /><br>
+    <input type='text' name='productos.id_categoria' size='3' value='' /><br>
     <label>Producto activo</label>
     <input type='checkbox' name='productos.vendible' value='' />Si<br>
     <label>Producto favorito</label>
