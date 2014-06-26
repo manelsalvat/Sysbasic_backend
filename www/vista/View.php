@@ -20,13 +20,6 @@ class View {
         self::showTemplate($entity . 'html');
     }
 
-    public static function showHome() {
-        // TODO show page based on entity name and passed data.
-        self::$data['header'] = self::getHeader();
-        self::$data['container'] = self::getGrid_menu(self::$data['user']);
-        self::showTemplate($entity . 'html');
-    }
-
     public static function delData() {
         self::$data = NULL;
     }
@@ -130,7 +123,7 @@ class View {
         return $grid;
     }
 
-   public static function getEntity_table($entity) {
+    public static function getEntity_table($entity) {
         $data = NULL;
         $table_head_rows = NULL;
         $table_body_rows = NULL;
