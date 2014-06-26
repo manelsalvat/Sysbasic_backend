@@ -28,12 +28,9 @@ if (filter_input(INPUT_GET, 'action')) {
 
         case 'show':
             $entity = filter_input(INPUT_GET, 'show');
-            
             $category_data = db::get_values_by_tableName('categorias');
-            $data['category_menu'] = View::getCategory_menu($category_data);
-            
             $data = View::getEntity_table($entity);
-            $data['container'] = '';
+            $data['category_menu'] = View::getCategory_menu($category_data);
             View::setData($data);
             View::showEntity($entity);
             break;
