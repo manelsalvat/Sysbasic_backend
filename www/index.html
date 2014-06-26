@@ -23,20 +23,20 @@
         <div class="row">
             <div class="container">
                 <div class="text-center">
-                    <img src="imgs/logo.png"  class="img-rounded" height="120">
+                    <img src=""  class="img-rounded" height="120">
                 </div>
             </div>
             <hr>
         </div>
 
-        <form class="form-signin" method="GET" action="process.php">
+        <form class="form-signin" method="post" action="process.php">
             <h2 class="form-signin-heading">Iniciar Session</h2>
             <hr>
+            <input type="hidden" name="action" value="login">
             <input type="text" placeholder="Usuario" name="usuario">
             <input type="password" placeholder="Contraseña" name="password">
-            <input type="hidden" name="login" value="login">
-
-            <button class="btn btn-primary" type="submit">Entrar</button>
+ 
+            <button class="btn btn-primary"  type="submit">Entrar</button>
         </form>
 
     </div>
