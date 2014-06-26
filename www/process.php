@@ -28,19 +28,18 @@ if (filter_input(INPUT_GET, 'action')) {
 
         case 'show':
             $entity = filter_input(INPUT_GET, 'show');
-            controler::setEntity($entity);
-            $data = controler::getData($entity);
+            
+            $category_data = db::get_values_by_tableName('categorias');
+            $data['category_menu'] = View::getCategory_menu($category_data);
+            
+            $data = View::getEntity_table($entity);
+            $data['container'] = '';
             View::setData($data);
             View::showEntity($entity);
             break;
 
-        case 'home':
-            $category_data = db::get_values_by_tableName('categorias');
-            $data['user'] = $_SESSION['user'];
-            $data['pass'] = $_SESSION['pass'];
-            $data['category_menu'] = View::getCategory_menu($category_data);
-            View::setData($data);
-            View::showEntity($entity);
+        case 'save':
+
             break;
 
         default:
@@ -72,10 +71,14 @@ function authenticate($user, $pass) {
             //if (!(session_status() === PHP_SESSION_ACTIVE)) {
             session_start();
             //}
+
+            $_SESSION['pass'] = $res->password;
+
             $data['user'] = $_SESSION['user'] = $res->usuario;
-            $data['pass'] = $_SESSION['pass'] = $res->password;
+
+            $data['container'] = View::getGrid_menu('');
             View::setData($data);
-            View::showHome();
+            View::showTemplate('home.html');
         } else {
             echo "<script type='text/javascript'> alert('contaseña incorrecto'); </script>";
             header("refresh:0,url=index.html");
