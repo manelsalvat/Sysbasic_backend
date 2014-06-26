@@ -19,14 +19,13 @@ class View {
 
         self::showTemplate($entity . 'html');
     }
+
     public static function showHome() {
         // TODO show page based on entity name and passed data.
         self::$data['header'] = self::getHeader();
         self::$data['container'] = self::getGrid_menu(self::$data['user']);
         self::showTemplate($entity . 'html');
     }
-    
-    
 
     public static function delData() {
         self::$data = NULL;
@@ -43,39 +42,42 @@ class View {
             echo $output;
         }
     }
-    
-    
-    
+
     public static function getHeader() {
 
-        $header = '<!DOCTYPE html>
-            <html>
-            <head>
-            <meta charset = "utf-8">
-            <title>sysBasicPro</title>
-            <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-            <meta name = "description" content = "">
-            <meta name = "author" content = "">
-            <link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
-            <script type = "text/javascript" src = "bootstrap/js/jquery.min.js"></script>
-            <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-            </head>';
+        $header = '';
 
 
         return $header;
     }
-    
-    public static function getNav_menu($user) {
-        
-        $nav=' ';
-        
+
+    public static function getCategory_menu($category_data) {
+        $category_li = '';
+        foreach ($category_data as $category) {
+            $category_li .= '<li>
+                <a href="process.php/?action=showCategory&id=' . $category->codigo . '" data-target="#tab1" data-toggle="tab">' . $category->nombre . '</a>
+                            </li>';
+        }
+        $nav = ' <div class="col-md-3">
+                <nav class="navbar navbar-default  navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1"><span class="sr-only">Toggle navigation</span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div style="height: 0px;" class="navbar-collapse collapse" id="nav1">
+                        ' . $category_li . '
+                        </ul>
+                    </div>
+                </nav>
+            </div> ';
+
         return $nav;
-        
     }
+
     public static function getGrid_menu($user) {
-        
+
         // ToDo process $user privilege to show hide menusItems
-        $grid=' <div class="col-md-9 col-md-push-2">
+        $grid = ' <div class="col-md-9 col-md-push-2">
                 <div class="row">
                     <div class="col-xs-6 col-md-3">
                         <a href="process.php/?action=show&show=usuarios" class="thumbnail">
@@ -124,14 +126,11 @@ class View {
                     </div>
                 </div>
             </div> ';
-        
+
         return $grid;
-        
     }
-    
+
     public static function get_Category_menu($data) {
-        
-        
         
     }
 
