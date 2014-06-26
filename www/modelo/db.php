@@ -30,7 +30,7 @@ class db {
 
     public static function get_values_by_tableName($table_name) {
         try {
-            $sql = "SELECT * FROM '.$table_name.'";
+            $sql = "SELECT * FROM $table_name";
             $query = self::$con->prepare($sql);
             $query->execute();
         } catch (PDOException $e) {
@@ -106,11 +106,11 @@ class db {
         try {
 
             $start = $page * $limit;
-
+            $table=  self::$table_name;
             self::$con->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-            $sth = self::$con->prepare("SELECT * FROM ".self::table_name." LIMIT ?,?");
-            $sth->execute(array($start, $limit));
-            $query = null;
+            $query = self::$con->prepare("SELECT * FROM $table LIMIT ?,?");
+            $query->execute(array($start, $limit));
+
         } catch (PDOException $e) {
             echo $e->getMessage();
             $query = null;
