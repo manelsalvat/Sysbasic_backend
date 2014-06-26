@@ -1,7 +1,5 @@
 <?php
 
-use Entity;
-
 /**
 * Clase usuarios que extiende de Entity relacionada con la tabla usuarios
 *
@@ -24,7 +22,6 @@ class Usuarios extends Entity {
 	private $tipo_cliente;
 	
     function __construct() {
-        parent::__construct($this->nif, $this->table_name);
         
     }
 
