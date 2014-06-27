@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*divs*/
+.a4{
+	height: 297mm;
+	width: 210mm;
+	border: 2px solid #999;
+}
+.logo{
+	height: 40mm;
+	width: 160mm;
+	float: left;
+	margin-top: 10mm;
+	margin-left: 20mm;
+	margin-right: 20mm;
+}
+.empresa{
+	height: 40mm;
+	width: 115mm;
+	position: relative;
+	float: right;
+}
+.capsalera {
+	float: left;
+	height: 15mm;
+	width: 160mm;
+	margin-top: 5mm;
+	margin-right: 20mm;
+	margin-left: 20mm;
+}
+.tripa{
+	float: left;
+	height: 160mm;
+	width: 160mm;
+	margin-top: 15mm;
+	margin-right: 20mm;
+	margin-left: 20mm;
+	border: 2px solid #999;
+}
+.peu{
+	float: left;
+	height: 15mm;
+	width: 160mm;
+	margin-top: 5mm;
+	margin-right: 20mm;
+	margin-left: 20mm;
+	
+}
+
+/*text*/
+.txt_capsalera{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #000;
+	line-height: 10px;
+	text-align: left;
+	padding: 3px;
+}
+
+/*taules*/	
+.taula_capsalera{
+	height: 8mm;
+	width: 160mm;
+	text-align: left;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #CCC;
+	vertical-align: middle;
+}
+.taula_capsalera2{
+	height: 8mm;
+	width: 160mm;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #CCC;
+	vertical-align: middle;
+}
+.taula_peu{
+	height: 8mm;
+	width: 160mm;
+	text-align: left;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #CCC;
+	vertical-align: middle;
+}
+.taula_peu2{
+	height: 8mm;
+	width: 160mm;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	background-color: #CCC;
+	vertical-align: middle;
+}
+.taula_total{
+	height: 15mm;
+	width: 50mm;
+	text-align: left;
+	border: 1px solid #000000;
+	float: right;
+	margin-bottom: 3mm;
+}
