@@ -42,7 +42,7 @@ class View {
 
         $entity_class = new $entity();
         $prop = $entity_class->getProperty();
-        
+
         foreach ($prop as $th) {
             $table_head_rows .= '
 
@@ -53,13 +53,13 @@ class View {
 
     public static function get_table_body($entity_data) {
         $table_body_rows = NULL;
-        
+
         foreach ($entity_data as $rows) {
-            $td='';
+            $td = '';
             foreach ($rows as $row) {
                 $td .= '<td>' . $row . '</td>';
             }
-            
+
             $table_body_rows .='<tr>' . $td . '</tr>';
         }
 
@@ -70,7 +70,7 @@ class View {
         $category_li = '';
         foreach ($category_data as $category) {
             $category_li .= '<li>
-                <button name="id" value="'.$category->codigo.'" class="btn btn-default" >' . $category->nombre . ' </button>
+                <button name="id" value="' . $category->codigo . '" class="btn btn-default" >' . $category->nombre . ' </button>
                 </li>';
         }
         $menu = '<div class="col-sm-2">
@@ -99,49 +99,56 @@ class View {
         $grid = ' <div class = "col-md-9 col-md-push-2">
                 <div class = "row">
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=usuarios" class = "thumbnail">
+                
+                <form method="POST" action="process.php">
+                    <input type="hidden" name="action" value="show">
+                            
+                <button name="show" value="usuarios" class = "thumbnail">
                 <img src = "imgs/Entypo_d83d(0)_256.png" alt = "usuarios" class = "img-responsive img-circle" width = "150">
                 <span><b>Usuarios</b></span>
-                </a>
+                </button>
                 </div>
+                
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=clientes" class = "thumbnail">
+                <button name="show" value="clientes" class = "thumbnail">
                 <img src = "imgs/Entypo_e7a6(0)_256.png" alt = "clientes" class = "img-responsive img-circle" width = "150">
                 <span><b>Clientes</b></span>
-                </a>
+                </button>
                 </div>
+                
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=productos" class = "thumbnail">
+                <button name="show" value="productos" class = "thumbnail">
                 <img src = "imgs/icomoon_e65b(0)_256.png" alt = "productos" class = "img-responsive img-circle" width = "150">
                 <span><b>Productos</b></span>
-                </a>
+                </button>
                 </div>
 
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=proveedores" class = "thumbnail">
+                <button name="show" value="proveedores" class = "thumbnail">
                 <img src = "imgs/icomoon_e657(0)_256.png" alt = "proveedores" class = "img-responsive img-circle" width = "150">
                 <span><b>Proveedores</b></span>
-                </a>
+                </button>
                 </div>
 
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=presupuestos" class = "thumbnail">
+                <button name="show" value="presupuestos" class = "thumbnail">
                 <img src = "imgs/linecons_e020(0)_256.png" alt = "presupuestos" class = "img-responsive img-circle" width = "150">
                 <span><b>Presupuestos</b></span>
-                </a>
+                </button>
                 </div>
 
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=pedidos" class = "thumbnail">
+                <button name="show" value="pedidos" class = "thumbnail">
                 <img src = "imgs/icomoon_e65a(0)_256.png" alt = "pedidos" class = "img-responsive img-circle" width = "150">
                 <span><b>Pedidos</b></span>
-                </a>
+                </button>
                 </div>
+                
                 <div class = "col-xs-6 col-md-3">
-                <a href = "process.php/?action=show&show=facturas" class = "thumbnail">
+                <button name="show" value="facturas" class = "thumbnail">
                 <img src = "imgs/icomoon_e653(0)_256.png" alt = "facturas" class = "img-responsive img-circle" width = "150">
                 <span><b>Facturas</b></span>
-                </a>
+                </button>
                 </div>
                 </div>
                 </div>
