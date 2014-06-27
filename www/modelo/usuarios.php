@@ -8,18 +8,18 @@
 
 class Usuarios extends Entity {
 
-    private $nif;
-    private $nombre;
-    private $apellidos;
-    private $direccion;
-    private $CP;
-    private $poblacion;
-    private $telefono;
-    private $mail;
-    private $imagen;
-    private $domicilio_pago;
-    private $activo;
-	private $tipo_cliente;
+    public $nif;
+    public $nombre;
+    public $apellidos;
+    public $direccion;
+    public $CP;
+    public $poblacion;
+    public $telefono;
+    public $mail;
+    public $imagen;
+    public $domicilio_pago;
+    public $activo;
+    public $tipo_cliente;
 	
     function __construct() {
         

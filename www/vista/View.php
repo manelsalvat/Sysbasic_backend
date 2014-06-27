@@ -22,7 +22,6 @@ class View {
 
         $dir = self::$path;
         if (file_exists($dir . $tplFile)) {
-            var_dump($dir . $tplFile);
             $output = file_get_contents($dir . $tplFile);
             foreach (self::$data as $key => $val) {
                 $replace = '{' . $key . '}';
@@ -38,47 +37,60 @@ class View {
         }
     }
 
-    public static function getEntity_table($entity) {
-        $data = NULL;
+    public static function get_table_head($entity) {
         $table_head_rows = NULL;
-        $table_body_rows = NULL;
 
         $entity_class = new $entity();
-
-        $rows = db::get_values_by_tableName($entity);
         $prop = $entity_class->getProperty();
-
-
+        
         foreach ($prop as $th) {
             $table_head_rows .= '
 
         <th>' . $th . '</th>';
         }
-        $data['table_head_tr'] = $table_head_rows;
+        return $table_head_rows;
+    }
 
-
-
-        foreach ($rows as $rows) {
-//            foreach ($values as $value) {
-//                $table_body_td .= '<td>' . $value . '</td>';
-//            }
-            //$table_body_rows = '<tr>' . $table_body_td . '</tr>';
+    public static function get_table_body($entity_data) {
+        $table_body_rows = NULL;
+        
+        foreach ($entity_data as $rows) {
+            $td='';
+            foreach ($rows as $row) {
+                $td .= '<td>' . $row . '</td>';
+            }
+            
+            $table_body_rows .='<tr>' . $td . '</tr>';
         }
-        $data['table_body_rows'] = $table_body_rows;
 
-        return $data;
+        return $table_body_rows;
     }
 
     public static function getCategory_menu($category_data) {
         $category_li = '';
         foreach ($category_data as $category) {
             $category_li .= '<li>
-                <a href = "process.php/?action=showCategory&id=' . $category->codigo . '" data-target = "#tab1" data-toggle = "tab">' . $category->nombre . ' < / a>
+                <button name="id" value="'.$category->codigo.'" class="btn btn-default" >' . $category->nombre . ' </button>
                 </li>';
         }
-        
+        $menu = '<div class="col-sm-2">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1"><span class="sr-only">Toggle navigation</span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div style="height: 0px;" class="navbar-collapse collapse" id="nav1">
+                    <form method="post" action="process.php">
+                    <input type="hidden" name="action" value="showByCategory">
+                        <ul class="nav nav-pills nav-stacked">
+                            ' . $category_li . '
+                        </ul>
+                        </form>
+                    </div>
+                </nav>
+            </div>';
 
-        return $category_li;
+        return $menu;
     }
 
     public static function getGrid_menu($user) {
@@ -146,11 +158,86 @@ class View {
                 <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
                 <meta name = "description" content = "">
                 <meta name = "author" content = "">
-                <link href = "'.self::$path.'bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
-                <script type = "text/javascript" src = "'.self::$path.'bootstrap/js/jquery.min.js"></script>
-<script type="text/javascript" src="'.self::$path.'bootstrap/js/bootstrap.min.js"></script>
+                <link href = "' . self::$path . 'bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+                <link href = "' . self::$path . 'costume.css" rel = "stylesheet" type = "text/css">
+                <script type = "text/javascript" src = "' . self::$path . 'bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="' . self::$path . 'bootstrap/js/bootstrap.min.js"></script>
 </head>';
         return $header;
+    }
+
+    public static function getTopMenu($user) {
+        $tMenu = '<div class="navbar navbar-default navbar-inverse navbar-static-top">
+
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div style="height: 0px;" class="navbar-collapse  navbar-ex1-collapse collapse">
+
+
+
+                    <div class="col-md-12 pull-right">
+                        <div class="col-md-3">
+                            <img src="' . self::$path . 'imgs/logo.png" class="img-responsive img-circle" width="200">
+                            
+                        </div> 
+                        <form method="POST" action="process.php">
+                            <input type="hidden" name="action" value="show">
+
+                            
+                        <ul class="nav nav-pills pull-left navbar-inverse menu-top">
+                           
+                            <li>
+                                <button class="btn btn-primary" name="show" value="home">Inicio</button>
+                            </li>
+                            <li class="active">
+                                    
+                                <button class="btn btn-primary" name="show" value="usuarios">
+                                <span class="sr-only">(current)</span>
+                                Usuarios</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="clientes">Clientes</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="productos">Productos</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="proveedores">Proveedores</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="presupuestos">Presupuestos</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="pedidos">Pedidos</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="facturas">Facturas</button>
+                            </li>
+                           
+                        </ul> 
+                         <div class="nav nav-pills pull-right navbar-inverse menu-top">
+                            <p class="label label-sm"><b>' . $user . '</b></p>
+                                <button class="btn btn-default btn-sm"  name="action" value="logout">Salir</a>
+                            <p class="label label-sm"><b>  </b>
+                            </p><a class="btn btn-danger btn-sm"  href="process.php/?action=config">Configuracion</a> 
+                        </div></form>
+        <hr>
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+        </div>';
+        return $tMenu;
     }
 
 }

@@ -24,6 +24,7 @@ class db {
     public static function setTable($table) {
         self::$table_name = $table;
     }
+
     public static function getConnection() {
         return self::$con;
     }
@@ -57,8 +58,8 @@ class db {
         $bind_columns = implode(", ", $columns_array_names);
 
         try {
-            $sql = "UPDATE ".
-            self::$table_name. " SET  $bind_columns  "
+            $sql = "UPDATE " .
+                    self::$table_name . " SET  $bind_columns  "
                     . " WHERE  $key  =  $key_value ";
 
 
@@ -86,13 +87,14 @@ class db {
         }
     }
 
-    public static function find_by_Column(&$class, $column_name, $value) {
+    public static function find_by_Column(/* &$class, */ $column_name, $value) {
 
+        $table=self::$table_name;
         try {
-            $sql = "SELECT * FROM ". self::$table_name." WHERE $column_name = :value";
+            $sql = " SELECT * FROM  $table  WHERE $column_name = $value ";
             $query = self::$con->prepare($sql);
-            $query->setFetchMode(PDO::FETCH_INTO, $class);
-            $query->execute(array(':value' => $value));
+            // $query->setFetchMode(PDO::FETCH_INTO, $class);
+            $query->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
             $query = null;
@@ -101,16 +103,13 @@ class db {
     }
 
     // get limited list page=offset
-    public static function getList_for_pagination($page, $limit) {
+    public static function getList_for_pagination($from, $to) {
 
         try {
 
-            $start = $page * $limit;
-            $table=  self::$table_name;
-            self::$con->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-            $query = self::$con->prepare("SELECT * FROM $table LIMIT ?,?");
-            $query->execute(array($start, $limit));
-
+            $table = self::$table_name;
+            $query = self::$con->prepare("SELECT * FROM $table WHERE codigo BETWEEN ?,?");
+            $query->execute(array($from, $to));
         } catch (PDOException $e) {
             echo $e->getMessage();
             $query = null;
@@ -127,7 +126,7 @@ class db {
         });
         $sql_columns_value = implode(",", $values);
         try {
-            $sql = "INSERT INTO  ".self::$table_name ."  VALUES (  $sql_columns_value  ) ";
+            $sql = "INSERT INTO  " . self::$table_name . "  VALUES (  $sql_columns_value  ) ";
 
             $query = self::$con->prepare($sql);
             $ok = $query->execute();

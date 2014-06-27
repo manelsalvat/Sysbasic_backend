@@ -24,7 +24,7 @@ class Entity {
     public function get_from_table($id) {
         db::init();
         db::setTable(get_called_class());
-        return db::find_by_Column($this, 'codigo', $id);
+        return db::find_by_Column('codigo', $id);
     }
     
     public function get_list($page,$limit) {
