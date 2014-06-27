@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>sysBasicPro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="bootstrap/css/documents.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id='document' class="a4">
+
+<div id='logo' class='logo'>
+	<img src='imgs\logo150x150.png'> 
+    <div id='nom_empresa' class="empresa">
+		{Nom de l'empresa}
+	</div>
+</div>
+
+<div id='cabecera' class="capsalera">
+	<table class='taula_capsalera'>
+		<tr>        
+        <td width="25mm"><p class="txt_capsalera">Documento n&uacute;m.</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{pedidos.numero_documento}</p></td>
+        <td width="25mm"><p class="txt_capsalera">Pedido n&uacute;m.</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{pedidos.numero_pedido}</p></td>
+        <td width="25mm"><p class="txt_capsalera">Fecha</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{documentos.fecha}</p></td>
+        <td width="25mm"><p class="txt_capsalera">Fecha entrega</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{entrega}</p></td>
+        </tr>
+        </table>
+        <table class='taula_capsalera2'>
+		<tr>
+        <td width="55mm"><p class="txt_capsalera">Cliente</td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{clientes.nif}</p></td>
+        <td bgcolor="#FFFFFF"><p class="txt_capsalera">{clientes.nombre}</p></td>
+		<td width="25mm"><p class="txt_capsalera">Direcci&oacute;n entrega</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{pedidos.direccion_entrega_pedido}</p></td>
+        </table>
+        <table class='taula_capsalera2'>
+        <td><p class="txt_capsalera">CP</p></td><td bgcolor="#FFFFFF" width="25mm"><p class="txt_capsalera">{pedidos.CP_entrega_pedido}</p></td>
+        <td><p class="txt_capsalera">Poblaci&oacute;n</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{pedidos.poblacion_entrega_pedido}</p></td>
+        <td><p class="txt_capsalera">Tel&eacute;fono</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{pedidos.telefono_entrega_pedido}</p></td>
+        </tr>
+	</table>
+	</div>
+
+<div id='contenido' class='tripa'>
+	{lineas_de_producto}
+</div>
+
+<div id='pie' class='peu'>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+        <title>sysBasicPro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="bootstrap/css/documents.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div id='document' class="a4">
+
+<div id='logo' class='logo'>
+	<img src='imgs\logo150x150.png'> 
+    <div id='nom_empresa' class="empresa">
+		{Nom de l'empresa}
+	</div>
+</div>
+
+<div id='cabecera' class="capsalera">
+	<table class='taula_capsalera'>
+		<td width='90mm'><p class="txt_capsalera">Presupuesto núm.</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{presupuestos.numero_documento}</p></td>
+        <td><p class="txt_capsalera">Fecha</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{documentos.fecha}</p></td>
+        <td><p class="txt_capsalera">Vàlido hasta</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{Validez}</p></td>
+        </tr>
+        </table>
+        <table class='taula_capsalera2'>
+		<tr>
+        <td width='90mm'><p class="txt_capsalera">Cliente</p></td><td bgcolor="#FFFFFF"><p class="txt_capsalera">{clientes.nif}</p></td><td colspan='4' bgcolor="#FFFFFF"><p class="txt_capsalera">{clientes.nombre}</p></td>
+	</table>
+	</div>
+
+<div id='contenido' class='tripa'>
+	{lineas_de_producto}
+</div>
+
+<div id='pie' class='peu'>
+		<table border="1" class="taula_total">
+		<tr>
+            <td width='70mm'><p class="txt_capsalera">Total bruto</p></td>
+            <td><p class="txt_capsalera">{TBrut}</p></td>
+            </tr>
+            <tr>
+            <td><p class="txt_capsalera">Total IVA</p></td>
+            <td><p class="txt_capsalera">{Tiva}</p></td>
+            </tr>
+            <td bgcolor="#CCCCCC"><p class="txt_capsalera"><b>Importe total</b></p></td>
+            <td><p class="txt_capsalera">{Total}</p></td>
+        </tr>
+        </table>
+
+</body>
+</html>
