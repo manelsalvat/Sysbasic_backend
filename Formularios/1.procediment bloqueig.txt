@@ -1,0 +1,19 @@
+﻿Renombrar el fitxer amb el nom de la persona que l'està modificant. 
+
+ej: 
+Manel_clientesform.html
+
+al acabar guardarlo en "formularios acabados" todos los formularios han de llevar el NOMBRE DE LA TABLA
+
+Els formularis han de tenir extensió .html
+
+'COMILLAS SIMPLES'
+
+<label>NIF</label> <input type='text' size="9" name='nif' value='{nif}' required><br />
+REQUIRED: a criteri de cadascú
+value='{nombredelcampo}'
+
+buttons: Nuevo (reset), Grabar , Cerrar (volver al listado)
+
+<button type='submit' name='submit'/>Grabar</button>
+<button type='reset' name='reset' />Nuevo</button>
