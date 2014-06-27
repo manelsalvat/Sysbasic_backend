@@ -9,12 +9,12 @@ use Entity;
  */
 class Pedidos extends Entity {
 
-    private $numero_documento;
-    private $numero_pedido;
-    private $direccion_entrega_pedido;
-    private $CP_entrega_pedido;
-    private $poblacion_entrega_pedido;
-    private $telefono_entrega_pedido;
+    public $numero_documento;
+    public $numero_pedido;
+    public $direccion_entrega_pedido;
+    public $CP_entrega_pedido;
+    public $poblacion_entrega_pedido;
+    public $telefono_entrega_pedido;
 
     function __construct() {
         

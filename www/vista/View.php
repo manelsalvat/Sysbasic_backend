@@ -10,6 +10,8 @@ class View {
     }
 
     public static function setData($data) {
+
+
         self::$path = getcwd() . '/vista/templates/';
         self::$data = $data;
     }
@@ -37,16 +39,11 @@ class View {
         }
     }
 
-    public static function get_table_head($entity) {
+    public static function get_table_head($prop) {
         $table_head_rows = NULL;
 
-        $entity_class = new $entity();
-        $prop = $entity_class->getProperty();
-
         foreach ($prop as $th) {
-            $table_head_rows .= '
-
-        <th>' . $th . '</th>';
+            $table_head_rows .= '<th>' . $th . '</th>';
         }
         return $table_head_rows;
     }
@@ -57,13 +54,16 @@ class View {
         foreach ($entity_data as $rows) {
             $td = '';
             foreach ($rows as $row) {
+                //<button name="edit" value="">
                 $td .= '<td>' . $row . '</td>';
             }
 
             $table_body_rows .='<tr>' . $td . '</tr>';
         }
 
-        return $table_body_rows;
+        return '<form method="post" action"process.php"><input type="hidden" name="action" value="edit">'
+                . $table_body_rows .
+                '<form>';
     }
 
     public static function getCategory_menu($category_data) {
@@ -120,6 +120,13 @@ class View {
                 <button name="show" value="productos" class = "thumbnail">
                 <img src = "imgs/icomoon_e65b(0)_256.png" alt = "productos" class = "img-responsive img-circle" width = "150">
                 <span><b>Productos</b></span>
+                </button>
+                </div>
+                
+                <div class = "col-xs-6 col-md-3">
+                <button name="show" value="categorias" class = "thumbnail">
+                <img src = "imgs/icomoon_e65b(0)_256.png" alt = "categorias" class = "img-responsive img-circle" width = "150">
+                <span><b>Categorias</b></span>
                 </button>
                 </div>
 
@@ -205,17 +212,17 @@ class View {
                             <li>
                                 <button class="btn btn-primary" name="show" value="home">Inicio</button>
                             </li>
-                            <li class="active">
-                                    
-                                <button class="btn btn-primary" name="show" value="usuarios">
-                                <span class="sr-only">(current)</span>
-                                Usuarios</button>
+                            <li>   
+                                <button class="btn btn-primary" name="show" value="usuarios">Usuarios</button>
                             </li>
                             <li>
                                 <button class="btn btn-primary" name="show" value="clientes">Clientes</button>
                             </li>
                             <li>
                                 <button class="btn btn-primary" name="show" value="productos">Productos</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary" name="show" value="categorias">Categorias</button>
                             </li>
                             <li>
                                 <button class="btn btn-primary" name="show" value="proveedores">Proveedores</button>

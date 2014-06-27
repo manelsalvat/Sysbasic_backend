@@ -35,20 +35,25 @@ if (filter_input(INPUT_POST, 'action')) {
                 return;
             }
             db::init();
-            $entity_data = db::get_values_by_tableName($entity);
-
+            db::setTable($entity);
+            //$entity_value=
             //show category Menu
             if ($entity === 'productos') {
                 $category_data = db::get_values_by_tableName('categorias');
                 $data['category_menu'] = View::getCategory_menu($category_data);
             }
+            // $entity_data = db::get_values_by_tableName($entity);
+            $visible_entity = new $entity();
+            $visible_entity_property = $visible_entity->get_visble_columns();
+            // 
+            $entity_data = db::get_columns_value($visible_entity_property,NULL);
 
             session_start();
 
             $data['user'] = $_SESSION['user'];
             $data['header'] = View::getHeader();
             $data['top_menu'] = View::getTopMenu($_SESSION['user']);
-            $data['table_head_tr'] = View::get_table_head($entity);
+            $data['table_head_tr'] = View::get_table_head($visible_entity_property);
             $data['table_body_rows'] = View::get_table_body($entity_data);
 
 
@@ -60,7 +65,11 @@ if (filter_input(INPUT_POST, 'action')) {
         case 'showByCategory':
             db::init();
             db::setTable('productos');
-            $entity_data = db::find_by_Column('id_categoria', filter_input(INPUT_POST, 'id'));
+            $entity = new Productos();
+            $visible_entity_property = $entity->get_visble_columns();
+            $entity_data = $entity_data = db::get_columns_value($visible_entity_property, filter_input(INPUT_POST, 'id'));
+
+            //db::find_by_Column('id_categoria', filter_input(INPUT_POST, 'id'));
 
             $category_data = db::get_values_by_tableName('categorias');
             $data['category_menu'] = View::getCategory_menu($category_data);
@@ -70,7 +79,7 @@ if (filter_input(INPUT_POST, 'action')) {
             $data['user'] = $_SESSION['user'];
             $data['header'] = View::getHeader();
             $data['top_menu'] = View::getTopMenu($_SESSION['user']);
-            $data['table_head_tr'] = View::get_table_head('productos');
+            $data['table_head_tr'] = View::get_table_head($visible_entity_property);
             $data['table_body_rows'] = View::get_table_body($entity_data);
 
             View::setData($data);
@@ -137,7 +146,7 @@ function authenticate($user, $pass) {
 }
 
 function go_home() {
-    //session_start();
+//session_start();
     if (!(session_status() === PHP_SESSION_ACTIVE)) {
         session_unset();
         session_start();

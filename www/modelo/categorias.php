@@ -1,7 +1,5 @@
 <?php
 
-use Entity;
-
 /**
  * Clase producto que extiende de Entity relacionado con la tabla productos
  *
@@ -9,8 +7,8 @@ use Entity;
  */
 class Categorias extends Entity {
 
-    private $codigo;
-    private $nombre;
+    public $codigo;
+    public $nombre;
     
     function __construct() {
         

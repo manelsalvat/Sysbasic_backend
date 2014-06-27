@@ -42,5 +42,42 @@ class Entity {
     public function getProperty_Values() {
         return array_values(get_object_vars($this));
     }
+    
+    public function get_visble_columns() {
+        // visible column as array
+        $visible_columns=array(
+            'Productos'=>array('codigo','nombre','descripcion','estoc','precio'),
+            'Clientes'=>array('nif','nombre','apellidos','telefono','poblacion'),
+            'Proveedores'=>array('nif','nombre','direccion','CP','activo'),
+            'Categorias'=>array('codigo','nombre'),
+            'Presupuestos'=>array('numero_documento','numero_presupuesto','dias_de_validez_presupuesto'),
+            'Facturas'=>array('numero_factura','numero_documento','tipo_de_pago','vencimiento'),
+            'Pedidos'=>array('numero_pedido','numero_documento'),
+            'Usuarios'=>array('nif','nombre','apellidos','telefono','poblacion')
+        );
+        return $visible_columns[get_called_class()];
+    }
+    
+    // get visible property for tables header
+    public function get_visible_property() {
+       
+       // return $out;
+    }
+  
+    // get visible value for tables rows
+    public function get_visible_values() {
+        $property = $this->getProperty_Values();
+        $out = array();
+        
+        array_walk($property, function(&$item) {
+            foreach ($this->get_visble_columns() as $selected) {
+               if($item === $selected) {
+                   array_push($out, $item);
+               } 
+            }
+            
+        });
+        return $out;
+    }
 
 }

@@ -8,7 +8,7 @@ function __autoload($className) {
 
 $patatas = new Productos();
 
-$patatas->setCodigo(5)
+$patatas->setCodigo(6)
         ->setNombre('fedasd')
         ->setMarca('gfhg-gh')
         ->setDescuento(5)

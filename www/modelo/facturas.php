@@ -1,7 +1,5 @@
 <?php
 
-use Entity;
-
 /**
  * Clase producto que extiende de Entity relacionado con la tabla productos
  *
@@ -9,11 +7,12 @@ use Entity;
  */
 class Facturas extends Entity {
 
-    private $numero_documento;
-    private $numero_factura;
-    private $tipo_de_pago;
-    private $vencimiento;
-    private $domicilio_pago;
+    public $numero_documento;
+    public $numero_factura;
+    public $tipo_de_pago;
+    public $vencimiento;
+    public $domicilio_pago;
+    
     function __construct() {
         
         

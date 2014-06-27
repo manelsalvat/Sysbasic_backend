@@ -1,24 +1,22 @@
 <?php
 
 /**
- * Clase producto que extiende de Entity relacionado con la tabla clientes
+ * Clase proveedores que extiende de Entity relacionado con la tabla productos
  *
  * @author azrak 2014
  */
-class Clientes extends Entity {
+class Proveedores extends Entity {
 
     public $nif;
     public $nombre;
-    public $apellidos;
     public $direccion;
-    public $CP;
+    public $cp;
     public $poblacion;
     public $telefono;
     public $mail;
     public $imagen;
-    public $domicilio_pago;
+    public $persona_de_contacto;
     public $activo;
-    public $tipo_cliente;
 
     function __construct() {
         
@@ -34,18 +32,13 @@ class Clientes extends Entity {
         return $this;
     }
 
-    public function setApellidos($apellidos) {
-        $this->apellidos = $apellidos;
-        return $this;
-    }
-
     public function setDireccion($direccion) {
         $this->direccion = $direccion;
         return $this;
     }
 
-    public function setCP($CP) {
-        $this->CP = $CP;
+    public function setCp($cp) {
+        $this->cp = $cp;
         return $this;
     }
 
@@ -69,8 +62,8 @@ class Clientes extends Entity {
         return $this;
     }
 
-    public function setDomicilio_pago($domicilio_pago) {
-        $this->domicilio_pago = $domicilio_pago;
+    public function setPersona_de_contacto($persona_de_contacto) {
+        $this->persona_de_contacto = $persona_de_contacto;
         return $this;
     }
 
@@ -79,9 +72,14 @@ class Clientes extends Entity {
         return $this;
     }
 
-    public function setTipo_cliente($tipo_cliente) {
-        $this->tipo_cliente = $tipo_cliente;
-        return $this;
-    }
+   
+    
+//    function __get($nombre) {
+//        return $this->nombre;
+//    }
+//    
+//    function __set($nombre, $value) {
+//        $this->nombre=$value;
+//    }
 
 }

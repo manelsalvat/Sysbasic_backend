@@ -72,6 +72,30 @@ class db {
             $query = null;
         }
     }
+    
+    public static function get_columns_value($columns_array_names, $filter) {
+        
+        // convert column_array to strings separated by comma ','
+//        array_walk($columns_array_names, function(&$item) {
+//            $item = '\'' . $item . '\'';
+//        });
+        $columns = implode(", ", $columns_array_names);
+        
+        $table=self::$table_name;
+        try {
+            $sql = "select  $columns from $table  ";
+            if ($filter) {
+            $sql = "select  $columns from $table where id_categoria=$filter  ";
+            }
+            $query = self::$con->prepare($sql);
+            $ok = $query->execute();
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            $query = null;
+        }
+        return $query->fetchAll();
+    }
 
     public static function delete_by_ID($key_name, $value) {
 
