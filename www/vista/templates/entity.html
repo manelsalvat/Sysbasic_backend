@@ -8,26 +8,35 @@
         <div class="container">
             <div class="row">
 
-                <div class="container col-md-10">
+                {category_menu}
+
+                <div class="col col-md-10">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Usuarios</h3>
+                            <h3 class="panel-title">{entity}</h3>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-condensed">
-                                <thead>
-                                    <tr>
-                                        
+                            <form method="POST" action="process.php">
+                                <input type="hidden" name="action" value="edit">
+                                <input type="hidden" name="entity" value="{entity}">
+                                <table class="table table-condensed">
+                                    <thead>
+
+
                                         {table_head_tr}
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
+
+
+                                    </thead>
+                                    <tbody>
+
+
                                         {table_body_rows}
-                                    
-                                </tbody>
-                            </table>
+
+
+
+                                    </tbody>
+                                </table></form>
+
                         </div>
                     </div>
 

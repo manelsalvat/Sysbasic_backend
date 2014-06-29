@@ -21,10 +21,10 @@ class Entity {
         db::update_by_columns_name($this->getProperty(), $this->getProperty_Values());
     }
 
-    public function get_from_table($id) {
+    public function get_from_table($key,$value) {
         db::init();
         db::setTable(get_called_class());
-        return db::find_by_Column('codigo', $id);
+        return db::find_by_Column($key, $value);
     }
     
     public function get_list($page,$limit) {

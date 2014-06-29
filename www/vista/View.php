@@ -40,12 +40,12 @@ class View {
     }
 
     public static function get_table_head($prop) {
-        $table_head_rows = NULL;
+        $table_head_row = NULL;
 
         foreach ($prop as $th) {
-            $table_head_rows .= '<th>' . $th . '</th>';
+            $table_head_row .= '<th>' . $th . '</th>';
         }
-        return $table_head_rows;
+        return '<th>Ver</th>'.$table_head_row;
     }
 
     public static function get_table_body($entity_data) {
@@ -54,16 +54,20 @@ class View {
         foreach ($entity_data as $rows) {
             $td = '';
             foreach ($rows as $row) {
-                //<button name="edit" value="">
+                if (!$td) {
+                    
+                    $td .= '<td><button type="submit" name="id" value="'.$row.'"  class="btn btn-info btn-xs">'
+                            . '<span class="glyphicon glyphicon-eye-open"></span></button></td>';
+                }
+                
                 $td .= '<td>' . $row . '</td>';
             }
-
+                
             $table_body_rows .='<tr>' . $td . '</tr>';
         }
 
-        return '<form method="post" action"process.php"><input type="hidden" name="action" value="edit">'
-                . $table_body_rows .
-                '<form>';
+        
+        return  $table_body_rows ;
     }
 
     public static function getCategory_menu($category_data) {

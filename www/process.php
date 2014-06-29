@@ -36,58 +36,27 @@ if (filter_input(INPUT_POST, 'action')) {
             }
             db::init();
             db::setTable($entity);
-            //$entity_value=
-            //show category Menu
-            if ($entity === 'productos') {
-                $category_data = db::get_values_by_tableName('categorias');
-                $data['category_menu'] = View::getCategory_menu($category_data);
-            }
-            // $entity_data = db::get_values_by_tableName($entity);
-            $visible_entity = new $entity();
-            $visible_entity_property = $visible_entity->get_visble_columns();
-            // 
-            $entity_data = db::get_columns_value($visible_entity_property,NULL);
+            $entity_class = new $entity();
+            $visible_entity_property = $entity_class->get_visble_columns();
+            $entity_data = db::get_columns_value($visible_entity_property, NULL);
 
-            session_start();
-
-            $data['user'] = $_SESSION['user'];
-            $data['header'] = View::getHeader();
-            $data['top_menu'] = View::getTopMenu($_SESSION['user']);
-            $data['table_head_tr'] = View::get_table_head($visible_entity_property);
-            $data['table_body_rows'] = View::get_table_body($entity_data);
-
-
-            View::setData($data);
-            $file = $entity . '.html';
-            View::showTemplate($file);
+            renderPage($entity,$visible_entity_property, $entity_data);
             break;
 
         case 'showByCategory':
             db::init();
             db::setTable('productos');
-            $entity = new Productos();
-            $visible_entity_property = $entity->get_visble_columns();
+            $entity_class = new Productos();
+            $visible_entity_property = $entity_class->get_visble_columns();
             $entity_data = $entity_data = db::get_columns_value($visible_entity_property, filter_input(INPUT_POST, 'id'));
 
-            //db::find_by_Column('id_categoria', filter_input(INPUT_POST, 'id'));
+            renderPage('productos',$visible_entity_property, $entity_data);
 
-            $category_data = db::get_values_by_tableName('categorias');
-            $data['category_menu'] = View::getCategory_menu($category_data);
-
-            session_start();
-
-            $data['user'] = $_SESSION['user'];
-            $data['header'] = View::getHeader();
-            $data['top_menu'] = View::getTopMenu($_SESSION['user']);
-            $data['table_head_tr'] = View::get_table_head($visible_entity_property);
-            $data['table_body_rows'] = View::get_table_body($entity_data);
-
-            View::setData($data);
-            View::showTemplate('productos.html');
             break;
 
-        case 'save':
-            $entity = filter_input(INPUT_GET, 'save');
+        case 'edit':
+            $entity = filter_input(INPUT_POST, 'entity');
+            showForm($entity, filter_input(INPUT_POST, 'id'));
             break;
 
         case 'update':
@@ -100,12 +69,47 @@ if (filter_input(INPUT_POST, 'action')) {
     }
 }
 
-if (filter_input(INPUT_GET, 'action')) {
-    $actions_array = filter_input_array(INPUT_GET);
+function renderPage($entity,$visible_entity_property, $entity_data) {
+    $data=array();
+    
+    session_start();
+    $data['entity'] = $entity;
+    $data['user'] = $_SESSION['user'];
+    $data['header'] = View::getHeader();
+    $data['top_menu'] = View::getTopMenu($_SESSION['user']);
+    //show category Menu
+            if ($entity === 'productos') {
+                $category_data = db::get_values_by_tableName('categorias');
+                $data['category_menu'] = View::getCategory_menu($category_data);
+            } else {
+                $data['category_menu'] = '';
+            }
+    $data['table_head_tr'] = View::get_table_head($visible_entity_property);
+    $data['table_body_rows'] = View::get_table_body($entity_data);
 
-    switch (filter_input(INPUT_GET, 'action')) {
-        
-    }
+    View::setData($data);
+    View::showTemplate('entity.html');
+}
+
+function showForm($entity, $id) {
+
+    db::init();
+    db::setTable($entity);
+
+    $entity_class = new $entity();
+    $entity_property = $entity_class->getProperty();
+    $data = $entity_class->get_from_table($entity_property[0], $id);
+    //$entity_class->getProperty_Values();
+    session_start();
+
+    $data['user'] = $_SESSION['user'];
+    $data['header'] = View::getHeader();
+    $data['top_menu'] = View::getTopMenu($_SESSION['user']);
+
+    //var_dump($data);
+    View::setData($data);
+    $file = $entity . 'Form.html';
+    View::showTemplate($file);
 }
 
 function authenticate($user, $pass) {
@@ -159,7 +163,6 @@ function go_home() {
     }
 
     $data['user'] = $_SESSION['user'];
-
     $data['header'] = View::getHeader();
     $data['top_menu'] = View::getTopMenu($_SESSION['user']);
     $data['container'] = View::getGrid_menu('');

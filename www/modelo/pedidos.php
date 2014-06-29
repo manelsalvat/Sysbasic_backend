@@ -1,7 +1,5 @@
 <?php
 
-use Entity;
-
 /**
  * Clase producto que extiende de Entity relacionado con la tabla productos
  *
