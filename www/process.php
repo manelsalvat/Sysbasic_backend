@@ -64,9 +64,10 @@ if (filter_input(INPUT_POST, 'action')) {
 //            db::init();
 //            db::setTable($entity);
             $entity_class = new $entity();
-            foreach ($entity_class as $key => $value) {
+            foreach ($entity_class as $key => &$value) {
                 $value = $actions_array[$key];
             }
+            var_dump($entity_class);
             $entity_class->save();
             break;
 
@@ -121,6 +122,10 @@ function showForm($entity, $id) {
         db::init();
         $category_data = db::get_values_by_tableName('categorias');
         $data['id_categoria'] = View::getCategory_list($category_data, $data['id_categoria']);
+        
+        $iva_data = db::get_values_by_tableName('tipo_iva');
+        $data['id_iva'] = View::getIva_list($iva_data, $data['id_iva']);
+        
     }
     //var_dump($data);
     View::setData($data);

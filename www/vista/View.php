@@ -264,7 +264,7 @@ class View {
         $list = '';
         $selected = '';
         foreach ($category_data as $key) {
-            if ($key->codigo == $selected) {
+            if ($key->codigo === $selected) {
                 $selected = "selected='selected'";
             }
             $list .= "<option value=$key->codigo  $selected  >$key->nombre</option>";
@@ -272,4 +272,16 @@ class View {
         return $list;
     }
 
+    public static function getIva_list($iva_data, $selected) {
+        
+        $list = '';
+        $selected = '';
+        foreach ($iva_data as $key) {
+            if ($key->id_tipo === $selected) {
+                $selected = "selected='selected'";
+            }
+            $list .= "<option value=$key->id_tipo  $selected  >$key->nombre_tipo</option>";
+        }
+        return $list;
+    }
 }
