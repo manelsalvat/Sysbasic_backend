@@ -1,0 +1,37 @@
+<!-- fet: Manel 27/6/14 18:30 -->
+<!--//revisat MIREIA fet el 30/06/2014-->
+<html>
+<body>
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label><h1>Formulari Clients</h1></label><br/>
+    <label>NIF</label> 				
+    	<input type='text' size='9'  	name='nif'	value='{nif}' required />	<br />
+	<label>Nombre</label>
+		<input type='text' size='20' 	name='nombre' maxlength='20' value='{nombre}' 	required />	<br />
+	<label>Apellidos</label>
+		<input type='text'   size='50' 	name='apellidos'			value='{apellidos}' required />	<br />
+	<label>Direcci&oacute;n</label>	
+		<input type='text'   size='50' 	name='direccion' 			value='{direccion}' required />	<br />
+	<label>CP</label>
+		<input type='text' size='5'  	name='CP' 					value='{CP}'		required />	<br />
+	<label>Poblaci&oacute;n</label>
+		<input type='text'   size='20' 	name='poblacion'			value='{poblacion}' required /> <br />
+	<label>Tel&eacute;fono</label>
+		<input type='text' size='9'  	name='telefono' 			value='{telefono}'			 />	<br />
+	<label>E-mail</label>
+		<input type='email'  size='20' 	name='mail'  maxlength='40' value='{mail}'		required /> <br />
+	<label>Imagen</label>
+	    <input type='file' name='imagen' value='{imagen}'			 /> <br />
+	<label>Domicilio de Pago</label>
+		<input type='text' size='24' 	name='domicilio_pago' 		value='{domicilio_de_pago}' /> <br />
+	<label>Est&aacute; activo</label>
+		<input type='checkbox' 	  	   name='activo' 				value='{activo}'			 /> <br />
+	<label>Recargo de Equivalencia<label>
+		<input type='checkbox' name='recargo_equivalencia' value='recargo_equivalencia'			 /> <br />
+	<br />
+	<button type='submit' name='submit'	/>Grabar</button>
+	<button type='reset'  name='reset' 	/>Nuevo</button>
+</form>
+</body>
+</html>

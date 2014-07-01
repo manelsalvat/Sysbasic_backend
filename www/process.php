@@ -17,7 +17,7 @@ if (filter_input(INPUT_POST, 'action')) {
     switch (filter_input(INPUT_POST, 'action')) {
 
         case 'login':
-            authenticate(filter_input(INPUT_POST, 'usuario'), filter_input(INPUT_POST, 'password'));
+            authenticate($actions_array ['usuario'], $actions_array['password']);
             break;
 
         case 'logout':
@@ -29,7 +29,7 @@ if (filter_input(INPUT_POST, 'action')) {
             break;
 
         case 'show':
-            $entity = filter_input(INPUT_POST, 'show');
+            $entity = $actions_array['show'];
             if ($entity === 'home') {
                 go_home();
                 return;
@@ -40,7 +40,7 @@ if (filter_input(INPUT_POST, 'action')) {
             $visible_entity_property = $entity_class->get_visble_columns();
             $entity_data = db::get_columns_value($visible_entity_property, NULL);
 
-            renderPage($entity, $visible_entity_property, $entity_data);
+            renderTable($entity, $visible_entity_property, $entity_data);
             break;
 
         case 'showByCategory':
@@ -48,19 +48,26 @@ if (filter_input(INPUT_POST, 'action')) {
             db::setTable('productos');
             $entity_class = new Productos();
             $visible_entity_property = $entity_class->get_visble_columns();
-            $entity_data = $entity_data = db::get_columns_value($visible_entity_property, filter_input(INPUT_POST, 'id'));
+            $entity_data = $entity_data = db::get_columns_value($visible_entity_property, $actions_array['id']);
 
-            renderPage('productos', $visible_entity_property, $entity_data);
+            renderTable('productos', $visible_entity_property, $entity_data);
 
             break;
 
         case 'edit':
-            $entity = filter_input(INPUT_POST, 'entity');
-            showForm($entity, filter_input(INPUT_POST, 'id'));
+            $entity = $actions_array['entity'];
+            showForm($entity, $actions_array['id']);
             break;
 
-        case 'update':
-            $entity = filter_input(INPUT_GET, 'update');
+        case 'save':
+            $entity = $actions_array['entity'];
+//            db::init();
+//            db::setTable($entity);
+            $entity_class = new $entity();
+            foreach ($entity_class as $key => $value) {
+                $value = $actions_array[$key];
+            }
+            $entity_class->save();
             break;
 
         default:
@@ -69,7 +76,7 @@ if (filter_input(INPUT_POST, 'action')) {
     }
 }
 
-function renderPage($entity, $visible_entity_property, $entity_data) {
+function renderTable($entity, $visible_entity_property, $entity_data) {
     $data = array();
 
     session_start();
@@ -93,22 +100,28 @@ function renderPage($entity, $visible_entity_property, $entity_data) {
 
 function showForm($entity, $id) {
 
-//    db::init();
-//    db::setTable($entity);
     $data = array();
     $entity_class = new $entity();
     $entity_property = $entity_class->getProperty();
+
     $entity_data = $entity_class->get_from_table($entity_property[0], $id);
     foreach ($entity_data[0] as $key => $value) {
         $data[$key] = $value;
     }
-  
+ 
+
     session_start();
 
+    $data['entity'] = $entity;
     $data['user'] = $_SESSION['user'];
     $data['header'] = View::getHeader();
     $data['top_menu'] = View::getTopMenu($_SESSION['user']);
 
+    if ($entity === 'productos') {
+        db::init();
+        $category_data = db::get_values_by_tableName('categorias');
+        $data['id_categoria'] = View::getCategory_list($category_data, $data['id_categoria']);
+    }
     //var_dump($data);
     View::setData($data);
     $file = $entity . 'Form.html';

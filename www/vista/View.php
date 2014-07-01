@@ -45,7 +45,7 @@ class View {
         foreach ($prop as $th) {
             $table_head_row .= '<th>' . $th . '</th>';
         }
-        return '<th>Ver</th>'.$table_head_row;
+        return '<th>Ver</th>' . $table_head_row;
     }
 
     public static function get_table_body($entity_data) {
@@ -55,19 +55,19 @@ class View {
             $td = '';
             foreach ($rows as $row) {
                 if (!$td) {
-                    
-                    $td .= '<td><button type="submit" name="id" value="'.$row.'"  class="btn btn-info btn-xs">'
+
+                    $td .= '<td><button type="submit" name="id" value="' . $row . '"  class="btn btn-info btn-xs">'
                             . '<span class="glyphicon glyphicon-eye-open"></span></button></td>';
                 }
-                
+
                 $td .= '<td>' . $row . '</td>';
             }
-                
+
             $table_body_rows .='<tr>' . $td . '</tr>';
         }
 
-        
-        return  $table_body_rows ;
+
+        return $table_body_rows;
     }
 
     public static function getCategory_menu($category_data) {
@@ -257,6 +257,19 @@ class View {
             <hr>
         </div>';
         return $tMenu;
+    }
+
+    public static function getCategory_list($category_data, $selected) {
+        
+        $list = '';
+        $selected = '';
+        foreach ($category_data as $key) {
+            if ($key->codigo == $selected) {
+                $selected = "selected='selected'";
+            }
+            $list .= "<option value=$key->codigo  $selected  >$key->nombre</option>";
+        }
+        return $list;
     }
 
 }

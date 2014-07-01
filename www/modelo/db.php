@@ -115,7 +115,7 @@ class db {
 
         $table=self::$table_name;
         try {
-            $sql = " SELECT * FROM  $table  WHERE $column_name = $value ";
+            $sql = " SELECT * FROM  $table  WHERE $column_name = '$value' ";
             $query = self::$con->prepare($sql);
             // $query->setFetchMode(PDO::FETCH_INTO, $class);
             $query->execute();

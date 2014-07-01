@@ -14,8 +14,9 @@
                         </div>
                         <div class="panel-body">
 
-                            <form method='POST' action='app.php'>
-                                <input type='hidden' name='action' value='login2' />
+                            <form method='POST' action='./process.php'>
+                                <input type='hidden' name='action' value='save' />
+                                <input type="hidden" name="entity" value="{entity}">
                                 <label>Código: </label>
                                 <input type='number' size='10' name='codigo' value='{codigo}' required />
                                 <br />
