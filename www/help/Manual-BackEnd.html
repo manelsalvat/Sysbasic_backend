@@ -1,0 +1,1204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Manual-BackEnd</title>
+	<link href="css/estilos_BackEnd.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="cap">
+		<div id="logo"><h1>Sysbasic</h1></div>
+		<div id="capcelera">
+			<h1>Manual de uso de aplicación BackEnd</h1>
+		</div>
+	</div>
+	<div id="cos">
+		<div id="latIZQ">
+				<ul>
+					<li><h4 id="index">Índex</h4></li>
+					<li><a href="#T1"><h5>1 - Acceso:</h5></a></li>
+					<li><a href="#T11"><h6>1.1 - Abrir sesión</h6></a></li>
+					<li><a href="#T12"><h6>1.2 - Dar de alta un nuevo usuario</h6></a></li>
+					<li><a href="#T13">1.3 - Cerrar Sesión</h6></a></li>
+
+					<li><a href="#T2"><h5>2 - Personalización</h5></a></li>
+					<li><a href="#T21"><h6>2.1 - Colocar su logotipo en la portada</h6></a></li>
+					<li><a href="#T22"><h6>2.2 - Personalizar imagen de la portada</h6></a></li>
+					<li><a href="#T23"><h6><2.3 - Modificar color: de fondo y de botones</h6></a></li>
+
+					<li><a href="#T3"><h5>3 - Estructura</h5></a></li>
+					<li><a href="#T31"><h6>3.1 - Pantalla de menú</h6></a></li>
+					<li><a href="#T32"><h6>3.2 - Árbol de estructura</h6></a></li>
+
+					<li><a href="#T4"><h5>4 - Gestión de:</h5></a></li>
+					<li><a href="#T41"><h6>4.1 - Usuarios</h6></a></li>
+						<li><a href="#T411"><h7>4.1.1 - Consultar listado de Usuarios</h7></a></li>
+						<li><a href="#T412"><h7>4.1.2 - Entrar en ficha de un Usuarios</h7></a></li>
+						<li><a href="#T413"><h7>4.1.3 - Modificar datos de un Usuarios</h7></a></li>
+						<li><a href="#T414"><h7>4.1.4 - Añadir un Usuarios</h7></a></li>
+						<li><a href="#T415"><h7>4.1.5 - Desactivar Usuarios</h7></a></li>
+
+					<li><a href="#T42"><h6>4.2 - Clientes</h6></a></li>
+						<li><a href="#T421"><h7>4.2.1 - Consultar listado de Clientes</h7></a></li>
+						<li><a href="#T422"><h7>4.2.2 - Entrar en ficha de un Cliente</h7></a></li>
+						<li><a href="#T423"><h7>4.2.3 - Modificar datos de un Cliente</h7></a></li>
+						<li><a href="#T424"><h7>4.2.4 - Añadir un Cliente</h7></a></li>
+						<li><a href="#T425"><h7>4.2.5 - Desactivar Cliente</h7></a></li>
+
+					<li><a href="#T43"><h6>4.3 - Proveedores</h6></a></li>
+						<li><a href="#T431"><h7>4.3.1 - Consultar listado de Proveedores</h7></a></li>
+						<li><a href="#T432"><h7>4.3.2 - Entrar en ficha de un Proveedores</h7></a></li>
+						<li><a href="#T433"><h7>4.3.3 - Modificar datos de un Proveedores</h7></a></li>
+						<li><a href="#T434"><h7>4.3.4 - Añadir un Proveedores</h7></a></li>
+						<li><a href="#T435"><h7>4.3.5 - Desactivar Proveedores</h7></a></li>
+
+					<li><a href="#T44"><h6>4.4 - Productos</h6></a></li>
+						<li><a href="#T441"><h7>4.4.1 - Consultar listado de Productos</h7></a></li>
+						<li><a href="#T442"><h7>4.4.2 - Entrar en ficha de un Productos</h7></a></li>
+						<li><a href="#T443"><h7>4.4.3 - Modificar datos de un Productos</h7></a></li>
+						<li><a href="#T444"><h7>4.4.4 - Añadir un Productos</h7></a></li>
+						<li><a href="#T445"><h7>4.4.5 - Desactivar Productos</h7></a></li>
+
+					<li><a href="#T45"><h6>4.5 - Categorias</h6></a></li>
+						<li><a href="#T451"><h7>4.5.1 - Consultar listado de Categorias</h7></a></li>
+						<li><a href="#T452"><h7>4.5.2 - Entrar en ficha de un Categorias</h7></a></li>
+						<li><a href="#T435"><h7>4.5.3 - Modificar datos de un Categorias</h7></a></li>
+						<li><a href="#T454"><h7>4.5.4 - Añadir un Categorias</h7></a></li>
+						<li><a href="#T455"><h7>4.5.5 - Desactivar Categorias</h7></a></li>
+
+					<li><a href="#T46"><h6>4.6 - Presupuestos</h6></a></li>
+						<li><a href="#T461"><h7>4.6.1 - Consultar listado de Presupuestos</h7></a></li>
+						<li><a href="#T462"><h7>4.6.2 - Entrar en ficha de un Presupuestos</h7></a></li>
+						<li><a href="#T463"><h7>4.6.3 - Modificar datos de un Presupuestos</h7></a></li>
+						<li><a href="#T464"><h7>4.6.4 - Añadir un Presupuestos</h7></a></li>
+						<li><a href="#T465"><h7>4.6.5 - Desactivar Presupuestos</h7></a></li>
+
+					<li><a href="#T47"><h6>4.7 - Pedidos</h6></a></li>
+						<li><a href="#T471"><h7>4.7.1 - Consultar listado de Pedidos</h7></a></li>
+						<li><a href="#T472"><h7>4.7.2 - Entrar en ficha de un Pedidos</h7></a></li>
+						<li><a href="#T473"><h7>4.7.3 - Modificar datos de un Pedidos</h7></a></li>
+						<li><a href="#T474"><h7>4.7.4 - Añadir un Pedidos</h7></a></li>
+						<li><a href="#T475"><h7>4.7.5 - Desactivar Pedidos</h7></a></li>
+
+					<li><a href="#T48"><h6>4.8 - Facturas</h6></a></li>
+						<li><a href="#T481"><h7>4.8.1 - Consultar listado de Facturas</h7></a></li>
+						<li><a href="#T482"><h7>4.8.2 - Entrar en ficha de un Facturas</h7></a></li>
+						<li><a href="#T483"><h7>4.8.3 - Modificar datos de un Facturas</h7></a></li>
+						<li><a href="#T484"><h7>4.8.4 - Añadir un Facturas</h7></a></li>
+						<li><a href="#T485"><h7>4.8.5 - Desactivar Facturas</h7></a></li>
+
+					<li><a href="#T5"><h5>5 - Su Base de datos</h5></a></li>
+						<li><a href="#T51"><h6>5.1 - Esta es su estructura de Base de Datos</h6></a></li>
+						<li><a href="#T52"><h6>5.2 - Asi se creó su Base de Datos</h6></a></li>
+						<li><a href="#T53"><h6>5.3 - Introducir datos en Base de Datos</h6></a></li>
+						<li><a href="#T54"><h6>5.4 - Modificar datos en Base de Datos</h6></a></li>
+						<li><a href="#T55"><h6>5.5 - Borrar datos en Base de Datos</h6></a></li>
+				</ul>
+		</div>
+		<div id="central">
+			<p id="intro">Bienvenido al manual que le enseñará cómo extraer el máximo beneficio de la aplicación para ventas, que acaba de adquirir.<br/>En estas pàginas podrá aprender cómo:<br />
+				<ul id="intro">
+					<li>1 - Abrir sesión/Registrarse/Cerrar Sesión</li>
+					<li>2 - Colocar su logotipo empresarial en la portada, colocar su imagen preferida en la portada y modificar, el color del fondo y el color de los botones, para conseguir un aspecto personalizado y adecuado a su imagen empresarial.</li>
+					<li>3 - Escoger entre las tareas: Usuarios, Cliente, Proveedor, Productos, Categorias, Presupuestos, Pedidos y Facturas.</li>
+					<li>4 - Cómo gestionar: Usuarios, Cliente, Proveedor, Productos, Categorias, Presupuestos, Pedidos y Facturas; introduciendo datos, modificandolos y desactivandolos.</li>
+					<li>5 - Y finalmente, una pequeña explicación técnica, de la organización de su base de datos.</li>
+				</ul>
+			</p>
+				<br/>
+
+				<h2 id="T1">1 - Acceso:</h2>
+					<p class="textH2">
+						Inmediatamente después de iniciar la aplicación, le aparecerá la pantalla de <b>"registro"</b>, o también denominada "logueo".
+					</p>
+				<h3 id="T11">1.1 - Abrir sesión</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación aparecerá en la pantalla de <b>"registro"</b>.<br />
+						En esta pantalla encontrará un espacio donde ha de introducir su nombre de usuario, y su contraseña.
+						<br />
+						<br />
+						<img class="img_deApuntes2" src="img/index_200x400.jpg" />
+						<br />
+						Nota: Dado el caso en que, se trate de <b>su primer acceso</b> al programa, siga los pasos anteriores usando como :
+					</p>
+							<ul class="liH3">
+								<li>nombre de usuario: <b>admin</b></li>
+								<li>contraseña: <b>admin</b></li>
+							</ul>
+					<p class="textH3">
+						<img class="img_deApuntes2" src="img/index-admin_200x400.jpg" />
+						<br />
+					</p>
+					<p class="textH3">
+						<u>Una vez verificados los datos</u>, el sistema le permitirá acceder a la pantalla de <b>"Menú"</b>, donde, en la parte superior derecha, <u>podrá ver en todo momento, en la aplicación su nombre de usuario.</u>
+						<br/><br/>
+					</p>
+					<p class="nota">
+						Nota: Recuerde eliminar este usuario genérico, una vez haya introducido los usuarios que desea.
+					</p>
+				<h3 id="T12">1.2 - Dar de alta un nuevo usuario</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña. Podrá acceder a la pantalla de <b>"Menú"</b>.
+						<br/><br/>
+						<img class="img_deApuntes1" src="img/menu_1000x560.jpg" />
+						<br />
+					</p>
+					<p class="textH3">
+						En la parte superior izquierda, aparecerá el logotipo de su empresa (una vez configurado para que aparezca), y podrá visualizar, seguidamente hacia la derecha, una série de pestañas que le llevarán a las secciones a las que puede acceder.
+						<br /><br />
+						A continuación, (de izquierda a derecha), en esta pantalla de <b>"Menú"</b>, aparecerá su nombre de usuario en la parte superior derecha de la pantalla.
+						<br /><br />
+						También podrá visualizar en esta zona, el botón de <b>SALIR</b> junto al del <b>CONFIGURACIÓN</b> general.
+						<br /><br />
+						En la zona central, o cuerpo de la página, verá los iconos (botones) de las secciones a las que puede acceder. Este otro camino, que complementa a las pestañas de arriba (antes mencionadas); ambos botones: pestañas e iconos, le llevarán a las mismas secciones que tengan el mismo nombre. Se trata de dos caminos al mismo "lugar", el cual escogerá usted, según se sienta más cómodo.
+						<br/>
+						<br />
+						Nota: Dado el caso en que, se trate de <b>su primer acceso</b> al programa, y haya entrado utilizando el usuario: <b>admin</b>, el nombre de usuario que aparecerá arriba a la derecha sera: <b>admin</b> como :
+						<br /><br />
+						<img class="img_deApuntes2" src="img/usuario_admin200x200.jpg" />
+						<br />
+					</p>
+					<p class="nota">
+						Nota: Recuerde eliminar este usuario genérico, una vez haya introducido los usuarios que desea.
+					</p>
+				<h3 id="T13">1.3 - Cerrar Sesión</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña.
+						Podrà acceder a la pantalla de <b>"Menú"</b></br><br />
+						Desde aquí y en adelante, en todas las paginas en las que se encuetre (exceptuando las fichas específicas), aparecerá su nombre de usuario en la parte superior derecha.<br/><br/>
+						Al lado de su nombre de usuario, encontrará un botón, <b>SALIR</b> donde, presionandolo una vez, podrá <b>Salir de su Sesión</b> o "des-loguearse"; volviendo a la página principal de registro o logueo.<br/>
+					<p>
+					<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+
+				<h2 id="T2">2 - Personalización</h2>
+					<p class="textH2">
+						En esta sección aprenderá cómo personalizar su aplicación de acorde a los estándares de imagen de su empresa.
+					</p>
+				<h3 id="T21">2.1 - Colocar su logotipo en la portada</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña.
+						Podrá acceder a la pantalla de <b>"Menú"</b>.</br>
+						En esta pantalla, encontrará:
+					</p>
+							<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú (pestañas) que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador)</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general</li>
+									<li>- Los <b>iconos o botones</b> de las secciones:</li>
+							</ul>
+							<ul class="liH3">
+								<li>CLIENTES</li>
+								<li>PROVEEDORES</li>
+								<li>PRODUCTOS</li>
+								<li>CATEGORIAS</li>
+								<li>PRESUPUESTOS</li>
+								<li>PEDIDOS</li>
+								<li>FACTURAS</li>
+								<li>USUARIOS</li>
+							</ul>
+					<p class="textH3">
+							Esta última sección <b>"Usuarios"</b>, sólo aparecerá en los casos en que:
+							<ul class="liH3">
+								<li>1 - su usuario tenga <b>todos los permisos de acceso</b>.</li>
+								<li>o</li>
+								<li>2 - utilice el usuario genérico: <b>admin</b> (ver 1.1 y 1.2)</li>
+							</ul>
+					</p>
+					<p class="textH3">
+						Presione el botón <b>"CONFIGURACIÓN"</b>en la parte superior derecha,.</br></br>
+						A continuación le aparecerá una ficha con las opciones de:
+					</p>
+							<ul class="liH4">
+									<li>- Cargar imagen de logotipo de Portada</li>
+									<li>- Cargar imagen de logotipo de Pantallas</li>
+									<li>- Cargar imagen de Portada</li>
+									<li>- Color de Fondo</li>
+									<li>- Color de botones</li>
+									<li>- GUARDAR</li>
+									<li>- VOLVER A MENÚ</li>
+							</ul>
+					<p class="textH3">
+						Seleccione <b>Cargar imagen de logotipo de Portada</b>, busque entre las carpetas, aquella dónde guardó su imagen de logotipo; escojalá y una vez cargada, pulse el botón <b>GUARDAR</b>. Esta imagen, aparecerà en la aplicación nada más reiniciarla, en la pantalla de regristro o logueo; se trata de una imagen con una medida de (...ejemplo 400px x 200px).<br /><br />
+						A continuación seleccione: <b>Cargar imagen de logotipo de Pantallas</b>, busque entre las carpetas, aquella dónde guardó su imagen de logotipo; escojalá y una vez cargada, pulse el botón <b>GUARDAR</b>. Esta imagen aparecerá en todo el resto de pantallas, en la parte superior izquierda; se trata de una imagen más pequeña con una medida de (...ejemplo 200px x 200px).<br /><br />
+					</p>
+
+				<h3 id="T22">2.2 - Personalizar imagen de la portada</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña.
+						Podrá acceder a la pantalla de <b>"Menú"</b>.</br>
+						En esta pantalla, encontrará:
+					</p>
+							<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú (pestañas) que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador)</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general</li>
+									<li>- Los <b>iconos o botones</b> de las secciones:</li>
+							</ul>
+							<ul class="liH3">
+								<li>CLIENTES</li>
+								<li>PROVEEDORES</li>
+								<li>PRODUCTOS</li>
+								<li>CATEGORIAS</li>
+								<li>PRESUPUESTOS</li>
+								<li>PEDIDOS</li>
+								<li>FACTURAS</li>
+								<li>USUARIOS</li>
+							</ul>
+					<p class="textH3">
+							Esta última sección <b>"Usuarios"</b>, sólo aparecerá en los casos en que:
+							<ul class="liH3">
+								<li>1 - su usuario tenga <b>todos los permisos de acceso</b>.</li>
+								<li>o</li>
+								<li>2 - utilice el usuario genérico: <b>admin</b> (ver 1.1 y 1.2)</li>
+							</ul>
+					</p>
+					<p class="textH3">
+						Presione el botón <b>"CONFIGURACIÓN"</b>en la parte superior derecha,.</br></br>
+						A continuación le aparecerá una ficha con las opciones de:
+					</p>
+							<ul class="liH4">
+									<li>- Cargar imagen de logotipo de Portada</li>
+									<li>- Cargar imagen de logotipo de Pantallas</li>
+									<li>- Cargar imagen de Portada</li>
+									<li>- Color de Fondo</li>
+									<li>- Color de botones</li>
+									<li>- GUARDAR</li>
+									<li>- VOLVER A MENÚ</li>
+							</ul>
+					<p class="textH3">
+						Seleccione <b>Cargar imagen de Portada</b>, busque entre las carpetas, aquella dónde guardó su imagen de portada; escojalá y una vez cargada, pulse el botón <b>GUARDAR</b>. Esta imagen, aparecerà en la aplicación nada más reiniciarla, en la pantalla de regristro o logueo; se trata de una imagen con una medida de (...ejemplo 200px x 400px).<br /><br />
+					</p>
+				<h3 id="T23">2.3 - Modificar color: de fondo y de botones</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña.
+						Podrá acceder a la pantalla de <b>"Menú"</b>.</br>
+						En esta pantalla, encontrará:
+					</p>
+							<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú (pestañas) que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador)</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general</li>
+									<li>- Los <b>iconos o botones</b> de las secciones:</li>
+							</ul>
+							<ul class="liH3">
+								<li>CLIENTES</li>
+								<li>PROVEEDORES</li>
+								<li>PRODUCTOS</li>
+								<li>CATEGORIAS</li>
+								<li>PRESUPUESTOS</li>
+								<li>PEDIDOS</li>
+								<li>FACTURAS</li>
+								<li>USUARIOS</li>
+							</ul>
+					<p class="textH3">
+							Esta última sección <b>"Usuarios"</b>, sólo aparecerá en los casos en que:
+							<ul class="liH3">
+								<li>1 - su usuario tenga <b>todos los permisos de acceso</b>.</li>
+								<li>o</li>
+								<li>2 - utilice el usuario genérico: <b>admin</b> (ver 1.1 y 1.2)</li>
+							</ul>
+					</p>
+					<p class="textH3">
+						Presione el botón <b>"CONFIGURACIÓN"</b>en la parte superior derecha,.</br></br>
+						A continuación le aparecerá una ficha con las opciones de:
+					</p>
+							<ul class="liH4">
+									<li>- Cargar imagen de logotipo de Portada</li>
+									<li>- Cargar imagen de logotipo de Pantallas</li>
+									<li>- Cargar imagen de Portada</li>
+									<li>- Color de Fondo</li>
+									<li>- Color de botones</li>
+									<li>- GUARDAR</li>
+									<li>- VOLVER A MENÚ</li>
+							</ul>
+					<p class="textH3">
+						Seleccione <b>Color de Fondo</b>, busque entre los colores ofrecidos, aquel que más se parezca a su color corporativo; escojalo y una vez cargado, pulse el botón <b>GUARDAR</b>. Esta acción hará que todas las secciones de la aplicación cambien al color escogido<br /><br />
+						A continuación seleccione: <b>Color de botones</b>, busque entre los colores ofrecidos, aquel que más combine con su color corporativo; escojalo y una vez cargado, pulse el botón <b>GUARDAR</b>. Esta acción hará que todas las secciones de la aplicación cambien el color de los botones.<br /><br />
+					</p>
+					<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+
+				<h2 id="T3">3 - Estructura</h2>
+					<p class="textH2">
+						En esta sección visualizará la esctuctura de su aplicación.
+						<br/>
+						<br/>
+						Esto le dará una imagen esquemática y clara de la estructura de su aplicación, para poder navegar por ella, siempre teniendo presente dónde se encuentra.
+					</p>
+
+				<h3 id="T31">3.1 - Pantalla de menú</h3>
+					<p class="textH3">
+						Una vez iniciada la aplicación, desde la página de "registro" (o logueo); y, una vez introducidos y verificados, sus datos de: usuario y contraseña. Podrá acceder a la pantalla de <b>"Menú"</b>, dónde podrá visualizar:
+					</p>
+						<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú (pestañas) que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador)</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general</li>
+									<li>- Los <b>iconos o botones</b> de las secciones:</li>
+							</ul>
+							<ul class="liH3">
+								<li>CLIENTES</li>
+								<li>PROVEEDORES</li>
+								<li>PRODUCTOS</li>
+								<li>CATEGORIAS</li>
+								<li>PRESUPUESTOS</li>
+								<li>PEDIDOS</li>
+								<li>FACTURAS</li>
+								<li>USUARIOS</li>
+							</ul>
+					<p class="textH3">
+						Estas dos ventanas, pertenecen a los dos primeros niveles del árbol esquemático abajo representado.<br /><br />
+						Los iconos (o pestañas) que representan las secciones a las que usted puede entrar y, desde las que gestionará todo su negocio; pertenecen al siguiente nivel. <br /><br />
+						Así pues, desde la primera ventana (de <b>registro o logueo</b>) solo puede acceder a la de <b>Menú</b> y, desde esta, a todo el resto de ventanas.
+					</p>
+				<h3 id="T32">3.2 - Árbol de estructura</h3>
+						<p class="textH3">
+							<img class="img_deApuntes1" src="img/Arbol-back-end-Manual.jpg" />
+						</p>
+						<br /><br />
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+						<br/>
+
+				<h2 id="T4">4 - Gestión de:</h2>
+					<p class="textH2">
+						Lea atentamente esta sección para conseguir gestionar bien los diferentes datos, el proceso es parecido de uno a otros datos, pero ciertas variaciones hacen que deba prestar atencion en que sección se encuentra.
+					</p>
+				<h3 id="T41">4.1 - Usuarios</h3>
+						<p class="textH3">
+							Como "administrador" de su empresa, usted ha adquirido esta aplicación para <b>gestionar a sus trabajadores</b>.<br/>
+							<br/>
+							Desde <b>"Usuarios"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus comerciales tendrá su propio acceso a la aplicación, y podrá gestionar clientes, productos y stock; siendo usted el administrador, el que gestione el acceso de sus trabajadores.
+							<br/>
+						</p>
+					<h4 id="T411">4.1.1 - Consultar listado de Usuarios</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono (botón o pestaña) <b>"USUARIOS"</b>.
+							<br /><br />
+							<img class="img_deApuntes1" src="img/menu_1000x560.jpg" />
+							<br /><br />
+							Entramos entonces en la sección de Usuarios.<br/>(Sabremos siempre en que sección estamos, observando las pestañas que hemos seleccionado para entrar en dicha sección). En este Caso, la pestaña "usuarios" estará iluminada, o cambiada de color.
+							<br/><br/>
+							<img class="img_deApuntes1" src="img/usuario_pantalla1000x563.jpg" />
+							<br />
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>listado de trabajadores</b></li>
+									<li>- El botón de <b>Configuaración General</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de sus trabajadores, o comerciales.
+							<br/>
+							<br/>
+							Escoja el trabajador que desee y presione su nombre para entrar en su ficha detallada con todos los datos.
+							<br/>
+							(Si es la primera vez que accede a esta aplicación, solo verá al usuario admin).
+						</p>
+					<h4 id="T412">4.1.2 - Entrar en ficha de un Usuarios</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del trabajador que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese usuario escogido.<br />
+							Se trata de <b>la ficha de usuario.</b>
+						</p>
+					<h4 id="T413">4.1.3 - Modificar datos de un Usuarios</h4>
+						<p class="textH4">
+							Si selecciona un usuario préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese usuario. <br/>
+							Desde esta ficha de usuario pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T414">4.1.4 - Añadir un Usuarios</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de usuario</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de usuario aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo usuario registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de clientes, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T415">4.1.5 - Desactivar Usuarios</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de trabajadores que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese usuario dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar usuarios. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+						<br/>
+				<h3>4.2 - Clientes</h3>
+						<p class="textH3">
+							Esta aplicación le permitirá <b>gestionar a sus Clientes</b>.<br/>
+							<br/>
+							Desde la pantalla de <b>Menú</b>, accediendo a <b>"Clientes"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus clientes quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+							<br/>
+						</p>
+					<h4 id="T421">4.2.1 - Consultar listado de Clientes</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"CLIENTES".</b>
+							</b>
+							<u>Sabremos siempre en que sección estamos, observando las pestañas que hemos seleccionado para entrar en la sección.</u><br /><br />
+							En este Caso, la pestaña "clientes" estará iluminada, o cambiada de color.
+							<br/>
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>listado de clientes</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de sus clientes.
+							<br/>
+							<br/>
+							Escoja el cliente que desee y presione su nombre para entrar en su ficha, detallada con todos los datos.
+							<br/>
+							Dado el caso en que exista una lista muy larga de clientes, siempre puede utilizar un filtro existente, que ayuda a autorellenar, para encontrar antes el nombre del cliente que busca.
+						</p>
+						
+					<h4 id="T422">4.2.2 - Entrar en ficha de un Cliente</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del cliente que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese usuario escogido.<br />
+							Se trata de <b>la ficha de cliente</b>.
+						</p>
+					<h4 id="T423">4.2.3 - Modificar un Cliente</h4>
+						<p class="textH4">
+							Si selecciona un cliente préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese cliente. <br/>
+							Desde esta ficha de cliente pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T424">4.2.4 - Añadir un Cliente</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de cliente</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de cliente aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo cliente registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de clientes, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T425">4.2.5 - Desactivar Cliente</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de clientes que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese cliente dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar clientes. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T43">4.3 - Proveedores</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar a sus Proveedores</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"Proveedores"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus proveedores quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T431">4.3.1 - Consultar listado de Proveedores</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"PROVEEDORES".</b>
+							</b>
+							<u>Sabremos siempre en que sección estamos, observando las pestañas que hemos seleccionado para entrar en la sección.</u><br /><br />
+							En este Caso, la pestaña "proveedores" estará iluminada, o cambiada de color.
+							<br/>
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>listado de Proveedores</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de sus proveedores.
+							<br/>
+							<br/>
+							Escoja el proveedor que desee y presione su nombre para entrar en su ficha, detallada con todos los datos.
+							<br/>
+							Dado el caso en que exista una lista muy larga de proveedores, siempre puede utilizar un filtro existente, que ayuda a autorellenar, para encontrar antes el nombre del proveedor que busca.
+						</p>
+					<h4 id="T432">4.3.2 - Entrar en ficha de un Proveedores</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del proveedor que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese proveedor escogido.<br />
+							Se trata de <b>la ficha de proveedor</b>.
+						</p>
+					<h4 id="T433">4.3.3 - Modificar datos de un Proveedores</h4>
+						<p class="textH4">
+							Si selecciona un proveedor préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese proveedor. <br/>
+							Desde esta ficha de proveedor pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T434">4.3.4 - Añadir un Proveedores</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de proveedores</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de proveedores aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo proveedor registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de clientes, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T435">4.3.5 - Desactivar Proveedores</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de proveedores que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese proveedor dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar proveedores. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T44">4.4 - Productos</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar sus Productos</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"Productos"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus productos quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T441">4.4.1 - Consultar listado de Productos</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"PRODUCTOS".</b>
+							</b>
+							<u>Sabremos siempre en que sección estamos, observando las pestañas que hemos seleccionado para entrar en la sección.</u><br /><br />
+							En este Caso, la pestaña "productos" estará iluminada, o cambiada de color.
+							<br/>
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>listado de Productos</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de sus productos.
+							<br/>
+							<br/>
+							Escoja el producto que desee y presione su nombre para entrar en su ficha, detallada con todos los datos.
+							<br/>
+							Dado el caso en que exista una lista muy larga de productos, siempre puede utilizar un filtro existente, que ayuda a encontrar el producto filtrando por <b>CATEGORIAS</b>, para encontrar antes el nombre del producto que busca.
+						</p>
+					<h4 id="T442">4.4.2 - Entrar en ficha de un Productos</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del producto que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese proveedor escogido.<br />
+							Se trata de <b>la ficha de proveedor</b>.
+						</p>
+					<h4 id="T443">4.4.3 - Modificar datos de un Productos</h4>
+						<p class="textH4">
+							Si selecciona un producto préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese producto. <br/>
+							Desde esta ficha de producto pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T444">4.4.4 - Añadir un Productos</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de productos</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de productos aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo producto registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de productos, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T445">4.4.5 - Desactivar Productos</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de productos que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese producto dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar productos. Desaparecerán de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T45">4.5 - Categorias</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar las Categorias de sus productos</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"CATEGORIAS"</b> podrá hacerlo con facilidad.<br/><br/>Cada una de sus categorias quedará registrada con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T451">4.5.1 - Consultar listado de Categorias</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"CATEGORIAS".</b>
+							</b>
+							En este caso, tendremos un listado de las categorias existentes.<br />
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>listado de Categorias</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de sus categorias.
+							<br/>
+							<br/>
+							Escoja la categoria que desee y presione su nombre para entrar en su ficha, detallada con todos los datos.
+							<br/>
+							Dado el caso en que exista una lista muy larga de categorias, siempre puede utilizar un filtro existente, que ayuda a autorellenar, para encontrar antes el nombre de la categoria que busca.
+						</p>
+					<h4 id="T452">4.5.2 - Entrar en ficha de un Categorias</h4>
+						<p class="textH4">
+							Una vez presionado el nombre de la categoria que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de esa categoria escogida.<br />
+							Se trata de <b>la ficha de categoria</b>.
+						</p>
+					<h4 id="T453">4.5.3 - Añadir un Categorias</h4>
+						<p class="textH4">
+							Si selecciona una categoria préviamente inscrita, (la escoge de la lista), se le abrirá la ventana emergente con los datos de esa categoria. <br/>
+							Desde esta ficha de categoria pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T454">4.5.4 - Modificar datos de un Categorias</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de categorias</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de categorias aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá una nueva categoria registrada que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de categorias, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T455">4.5.5 - Desactivar Categorias</h4>
+						<p class="textH4">
+							Debido a la necesidad de utilizar una categoria, o no utilizarla, según demanda, campañas promocionales, etc... <br/><br/> Esta aplicación ofrece la posibilidad de desactivar las categorias que hayan sido dados de baja, en vez de borrar los datos.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de esa categoria dada de baja.<br/><br/>
+							Podrá consultarlas siempre, pero ya no los verá en su trato diario al gestionar clientes. Desaparecerán de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T46">4.6 - Presupuestos</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar sus Presupuestos</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"PRESUPUESTOS"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus presupuestos quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T461">4.6.1 - Consultar listado de Presupuestos</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"PRESUPUESTOS".</b>
+							</b>
+							En este caso, tendremos un listado de los presupuestos existentes de un cliente.<br />
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>filtro para escoger cliente</b></li>
+									<li>- El <b>listado de presupuestos de ese cliente</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de presupuestos almacenados en la base de datos; mediante el filtro de cliente, reduzca esta lista a los presupuestos del cliente seleccionado.
+							<br/>
+							<br/>
+							Escoja el presupuesto que desee y presione su número de identificación para entrar en su ficha, detallada con todos los datos.
+							<br/>
+						</p>
+					<h4 id="T462">4.6.2 - Entrar en ficha de un Presupuestos</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del presupuesto que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese presupuesto escogido.<br />
+							Se trata de <b>la ficha de presupuesto</b>.
+						</p>
+					<h4 id="T463">4.6.3 - Añadir un Presupuestos</h4>
+						<p class="textH4">
+							Si selecciona un presupuesto préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese presupuesto. <br/>
+							Desde esta ficha de presupuesto pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T464">4.6.4 - Modificar datos de un Presupuestos</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de presupuesto</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de presupuesto aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo presupuesto registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de presupuestos, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T465">4.6.5 - Desactivar Presupuestos</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de pedidos que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese presupuesto dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar presupuestos. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T47">4.7 - Pedidos</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar sus Pedidos</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"PEDIDOS"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus pedidos quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T471">4.7.1 - Consultar listado de Pedidos</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"PEDIDOS".</b>
+							</b>
+							En este caso, tendremos un listado de los pedidos existentes de un cliente.<br />
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>filtro para escoger cliente</b></li>
+									<li>- El <b>listado de pedidos de ese cliente</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de pedidos almacenados en la base de datos; mediante el filtro de cliente, reduzca esta lista a los pedidos del cliente seleccionado.
+							<br/>
+							<br/>
+							Escoja el pedido que desee y presione su número de identificación para entrar en su ficha, detallada con todos los datos.
+							<br/>
+						</p>
+					<h4 id="T472">4.7.2 - Entrar en ficha de un Pedidos</h4>
+						<p class="textH4">
+							Una vez presionado el nombre del pedido que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de ese pedido escogido.<br />
+							Se trata de <b>la ficha de pedido</b>.
+						</p>
+					<h4 id="T473">4.7.3 - Añadir un Pedidos</h4>
+						<p class="textH4">
+							Si selecciona un pedido préviamente inscrito, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de ese pedido. <br/>
+							Desde esta ficha de pedido pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T474">4.7.4 - Modificar datos de un Pedidos</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de pedidos</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de pedidos aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá un nuevo pedido registrado que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de pedidos, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T475">4.7.5 - Desactivar Pedidos</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de pedidos que hayan sido dados de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese pedido dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar pedidos. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T48">4.8 - Facturas</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>gestionar sus Facturas</b>.<br/>
+						<br/>
+						Desde la pantalla de <b>Menú</b>, accediendo a <b>"FACTURAS"</b> podrá hacerlo con facilidad.<br/><br/>Cada uno de sus proveedores quedará registrado con los datos necesarios para el buen funcionamiento de su empresa; y, podrá acceder a ellos con facilidad y rapidez.
+						<br/>
+					</p>
+					<h4 id="T481">4.8.1 - Consultar listado de Facturas</h4>
+						<p class="textH4">
+							Desde la pantalla del <b>"Menú"</b> seleccione el icono ( o botón ) <b>"FACTURAS".</b>
+							</b>
+							En este caso, tendremos un listado de las facturas existentes de un cliente.<br />
+							Arriba de izquierda a derecha, encontrará:
+						</p>
+								<ul class="liH4">
+									<li>- El <b>logo</b> de su empresa</li>
+									<li>- La barra de Menú que le llevará a las diferentes <b>secciones</b><br />(recuerde que usuarios sólo será visible si es administrador</li>
+									<li>- El <b>nombre del usuario</b> registrado o logueado</li>
+									<li>- El <b>botón SALIR</b> para finalizar sesión o desloguearse</li>
+									<li>- El <b>botón CONFIGURACIÓN</b> para personalizar la configuración general.</li>
+									<li>- El <b>filtro para escoger cliente</b></li>
+									<li>- El <b>listado de facturas de ese cliente</b></li>
+									<li>- El botón de <b>Volver a Menú</b></li>
+								</ul>
+						<p class="textH4">
+							Nada más entrar en esta página podrá ver un listado de facturas almacenados en la base de datos; mediante el filtro de cliente, reduzca esta lista a los pedidos del cliente seleccionado.
+							<br/>
+							<br/>
+							Escoja la factura que desee y presione su número de identificación para entrar en su ficha, detallada con todos los datos.
+							<br/>
+						</p>
+					<h4 id="T482">4.8.2 - Entrar en ficha de un Facturas</h4>
+						<p class="textH4">
+							Una vez presionado el nombre de la factura que desea. Se abrirá una ventana emergente en la que podrá observar todos los datos de esa factura escogida.<br />
+							Se trata de <b>la ficha de factura</b>.
+						</p>
+					<h4 id="T483">4.8.3 - Añadir un Facturas</h4>
+						<p class="textH4">
+							Si selecciona una factura préviamente inscrita, (lo escoge de la lista), se le abrirá la ventana emergente con los datos de esa factura. <br/>
+							Desde esta ficha de factura pordrá tocar cualquier campo que necesite, para modificar sus valores, dado el caso en el que no sean correctos.
+						<p>
+					<h4 id="T484">4.8.4 - Modificar datos de un Facturas</h4>
+						<p class="textH4">
+							Si estando en <b>la ficha de facturas</b>, presiona el botón "nuevo", "añadir nuevo", la ficha de facturas aparecerá con los campos vacios, que podrá rellenar y registrar, presionando en el botón guardar.<br/>
+							De este modo tendrá una nueva factura registrada que le aparecerá en la lista, una vez cierre la ventana emergente, mediante el aspa que aparece arriba a su derecha; volverá la sección de facturas, y podrá comprobar en su listado que esta nueva entrada ha sido realizada con éxito.
+						</p>
+					<h4 id="T485">4.8.5 - Desactivar Facturas</h4>
+						<p class="textH4">
+							Debido a las diversas normas legales, los datos empresariales no pueden borrarse hasta no haber pasado un tiempo prudencial, en el que nos los pueden solicitar las autoridades.<br/><br/>
+							Para evitar la pérdida de datos de facturas que hayan sido dadas de baja, esta aplicación ofrece la opción de desactivar en vez de borrar.<br/>
+							<br/>
+							Así pues, desverifique la casilla de check-box de "activo/desactivo" y no perderá los datos de ese facturas dado de baja.<br/><br/>
+							Podrá consultarlos siempre, pero ya no los verá en su trato diario al gestionar facturas. Desapareceran de la lista que hay al entrar en esta sección.
+						</p>
+						<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+					<br/>
+				<h3 id="T5">5 - Su Base de datos</h3>
+					<p class="textH3">
+						Esta aplicación le permitirá <b>conocer la estructura de su BASE DE DATOS</b>.<br/>
+						<br/>
+						Conocerla le puede ayudar a entendre cómo se estructura esta aplicación y cómo sus datos son procesados para facilitarle cualquier gestión.
+						<br/>
+					</p>
+					<h4 id="T51">5.1 - Esta es su estructura de Base de Datos</h4>
+						<p class="textH4">
+							Visualmente, su base de datos, seria la siguiente:<br />
+							<br />
+							<img class="img_deApuntes1" src="img/visual_bbdd.jpg">
+						</p>
+					<h4 id="T52">5.2 - Asi se creó su Base de Datos</h4>
+							<p class="textH4">
+								En el ámbito de la programación de base de datos, la estructura de esta es:<br /><br/>
+									CREATE TABLE IF NOT EXISTS `categorias` (<br/>
+									  `codigo` smallint(3) NOT NULL AUTO_INCREMENT,<br/>
+									  `nombre` varchar(30) NOT NULL,<br/>
+									  PRIMARY KEY (`codigo`)<br/>
+									) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;<br/><br/>
+
+									--<br/>
+									-- Bolcant dades de la taula `categorias`<br/>
+									--<br/><br/>
+
+									INSERT INTO `categorias` (`codigo`, `nombre`) VALUES<br/>
+									(1, 'accesorios'),<br/>
+									(2, 'bailarinas'),<br/>
+									(3, 'botas de mujer'),<br/>
+									(4, 'botas de hombre'),<br/>
+									(5, 'botines'),<br/>
+									(6, 'chanclas'),<br/>
+									(7, 'esclavas'),<br/>
+									(8, 'mocasines'),<br/>
+									(9, 'nauticos'),<br/>
+									(10, 'pantuflas'),<br/>
+									(11, 'sandalias');<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `clientes`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `clientes` (<br/>
+									  `nif` varchar(9) NOT NULL,<br/>
+									  `nombre` varchar(30) NOT NULL,<br/>
+									  `apellidos` varchar(50) DEFAULT NULL,<br/>
+									  `direccion` varchar(50) DEFAULT NULL,<br/>
+									  `CP` int(5) DEFAULT NULL,<br/>
+									  `poblacion` varchar(30) DEFAULT NULL,<br/>
+									  `telefono` int(9) DEFAULT NULL,<br/>
+									  `mail` varchar(50) DEFAULT NULL,<br/>
+									  `imagen` varchar(10) DEFAULT NULL,<br/>
+									  `domicilio_pago` varchar(24) DEFAULT NULL,<br/>
+									  `activo` enum('SI','NO') NOT NULL DEFAULT 'SI',<br/>
+									  `recargo_equivalencia` enum('SI','NO') NOT NULL DEFAULT 'NO',<br/>
+									  PRIMARY KEY (`nif`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									--<br/>
+									-- Bolcant dades de la taula `clientes`<br/>
+									--<br/><br/>
+
+									INSERT INTO `clientes` (`nif`, `nombre`, `apellidos`, `direccion`, `CP`, `poblacion`, `telefono`, `mail`, `imagen`, `domicilio_pago`, `activo`, `recargo_equivalencia`) <br/>
+									VALUES ('12345678A', 'Antonio', 'Alamo Antunez', 'C/ AAAA, 1', 1001, 'Aranjuez', 912345678, 'antonioalamo@a.com', '1.jpg', 'ES1020810001330200012345', 'SI', 'SI'),<br/>
+									('23456789B', 'Belinda', 'Borregan Benguerel', 'Av/ BBBB, 2', 2002, 'Benicarló', 962349999, 'bbb@b.com', '2.jpg', 'ES3320010066053300000012', 'SI', 'NO'),<br/>
+									('34567890C', 'Carmelo', 'Cifuentes Cortacan', 'Passeig de les Cabrres, 33', 8700, 'Igualada', 938041233, 'carcico@igualada.cat', '1.jpg', 'ES3600992001003300095112', 'SI', 'NO'),<br/>
+									('B08678908', 'La bona espardenya', NULL, 'C/ Nou, 71', 8700, 'Igualada', 938049999, 'bonaespardenya@be.cat', '1.jpg', 'ES3600662001009900035832', 'SI', 'NO');<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `documentos`<br/>
+									--<br/>
+
+									CREATE TABLE IF NOT EXISTS `documentos` (<br/>
+									  `numero` int(10) NOT NULL AUTO_INCREMENT,<br/>
+									  `tipo` enum('PRE','PED','FAC') NOT NULL,<br/>
+									  `fecha` date NOT NULL,<br/>
+									  `importe` decimal(8,2) NOT NULL,<br/>
+									  `nif_usuario` varchar(9) NOT NULL,<br/>
+									  `nif_cliente` varchar(9) NOT NULL,<br/>
+									  PRIMARY KEY (`numero`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `facturas`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `facturas` (<br/>
+									  `numero_factura` int(10) NOT NULL AUTO_INCREMENT,<br/>
+									  `numero_documento` int(10) NOT NULL DEFAULT '0',<br/>
+									  `tipo_de_pago` varchar(20) DEFAULT NULL,<br/>
+									  `vencimiento` date DEFAULT NULL,<br/>
+									  `domicilio_pago` varchar(24) DEFAULT NULL,<br/>
+									  PRIMARY KEY (`numero_factura`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `pedidos`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `pedidos` (<br/>
+									  `numero_pedido` int(10) NOT NULL AUTO_INCREMENT,<br/>
+									  `numero_documento` int(10) NOT NULL DEFAULT '0',<br/>
+									  `direccion_entrega_pedido` varchar(50) DEFAULT NULL,<br/>
+									  `CP_entrega_pedido` int(5) DEFAULT NULL,<br/>
+									  `poblacion_entrega_pedido` varchar(30) DEFAULT NULL,<br/>
+									  `telefono_entrega_pedido` int(9) DEFAULT NULL,<br/>
+									  PRIMARY KEY (`numero_pedido`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `presupuestos`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `presupuestos` (<br/>
+									  `numero_presupuesto` int(10) NOT NULL AUTO_INCREMENT,<br/>
+									  `numero_documento` int(10) NOT NULL DEFAULT '0',<br/>
+									  `dias_de_validez_presupuesto` smallint(3) DEFAULT NULL,<br/>
+									  PRIMARY KEY (`numero_presupuesto`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `productos`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `productos` (<br/>
+									  `codigo` int(10) NOT NULL,<br/>
+									  `nombre` varchar(30) NOT NULL,<br/>
+									  `marca` varchar(30) DEFAULT NULL,<br/>
+									  `descripcion` varchar(255) NOT NULL,<br/>
+									  `precio` decimal(8,2) NOT NULL,<br/>
+									  `id_iva` smallint(1) NOT NULL,<br/>
+									  `descuento` decimal(4,2) DEFAULT NULL,<br/>
+									  `unidad_de_medida` varchar(10) DEFAULT NULL,<br/>
+									  `estoc` int(10) DEFAULT NULL,<br/>
+									  `vendible` enum('SI','NO') NOT NULL DEFAULT 'SI',<br/>
+									  `favorito` enum('SI','NO') NOT NULL DEFAULT 'NO',<br/>
+									  `id_categoria` smallint(3) NOT NULL,<br/>
+									  PRIMARY KEY (`codigo`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `productos_por_documento`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `productos_por_documento` (<br/>
+									  `numero_documento` int(10) NOT NULL,<br/>
+									  `codigo_producto` int(10) NOT NULL,<br/>
+									  `nombre_producto` varchar(30) NOT NULL,<br/>
+									  `marca_producto` varchar(30) DEFAULT NULL,<br/>
+									  `descripcion_producto` varchar(255) NOT NULL,<br/>
+									  `precio_producto` decimal(8,2) NOT NULL,<br/>
+									  `cantidad` int(6) NOT NULL,<br/>
+									  `iva` decimal(4,2) NOT NULL,<br/>
+									  `recargo_equivalencia` decimal(4,2) DEFAULT NULL,<br/>
+									  `descuento` decimal(4,2) DEFAULT NULL,<br/>
+									  PRIMARY KEY (`numero_documento`,`codigo_producto`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `provee`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `provee` (<br/>
+									  `id_producto` int(10) NOT NULL,<br/>
+									  `id_proveedor` varchar(9) NOT NULL,<br/>
+									  PRIMARY KEY (`id_producto`,`id_proveedor`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `proveedores`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `proveedores` (<br/>
+									  `nif` varchar(9) NOT NULL,<br/>
+									  `nombre` varchar(50) NOT NULL,<br/>
+									  `direccion` varchar(50) DEFAULT NULL,<br/>
+									  `CP` int(5) DEFAULT NULL,<br/>
+									  `poblacion` varchar(30) DEFAULT NULL,<br/>
+									  `telefono` int(9) DEFAULT NULL,<br/>
+									  `mail` varchar(50) DEFAULT NULL,<br/>
+									  `imagen` varchar(10) DEFAULT NULL,<br/>
+									  `persona_de_contacto` varchar(30) DEFAULT NULL,<br/>
+									  `activo` enum('SI','NO') NOT NULL DEFAULT 'SI',<br/>
+									  PRIMARY KEY (`nif`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `tipo_iva`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `tipo_iva` (<br/>
+									  `id_tipo` smallint(1) NOT NULL AUTO_INCREMENT,<br/>
+									  `nombre_tipo` varchar(20) NOT NULL,<br/>
+									  `porcentaje` decimal(4,2) NOT NULL,<br/>
+									  `recargo_equivalencia` decimal(4,2) NOT NULL,<br/>
+									  PRIMARY KEY (`id_tipo`)<br/>
+									) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;<br/><br/>
+
+									--<br/>
+									-- Bolcant dades de la taula `tipo_iva`<br/>
+									--<br/>
+
+									INSERT INTO `tipo_iva` (`id_tipo`, `nombre_tipo`, `porcentaje`, `recargo_equivalencia`)<br/>
+									VALUES (1, 'general', '21.00', '5.20'),<br/>
+									(2, 'reducido', '10.00', '1.40'),<br/>
+									(3, 'superreducido', '4.00', '0.50'),<br/>
+									(4, 'tabaco', '21.00', '0.75');<br/><br/>
+
+									-- --------------------------------------------------------<br/><br/>
+
+									--<br/>
+									-- Estructura de la taula `usuarios`<br/>
+									--<br/><br/>
+
+									CREATE TABLE IF NOT EXISTS `usuarios` (<br/>
+									  `nif` varchar(9) NOT NULL,<br/>
+									  `nombre` varchar(30) NOT NULL,<br/>
+									  `apellidos` varchar(50) NOT NULL,<br/>
+									  `direccion` varchar(50) DEFAULT NULL,<br/>
+									  `CP` int(5) DEFAULT NULL,<br/>
+									  `poblacion` varchar(30) DEFAULT NULL,<br/>
+									  `telefono` int(9) DEFAULT NULL,<br/>
+									  `mail` varchar(50) DEFAULT NULL,<br/>
+									  `imagen` varchar(10) DEFAULT NULL,<br/>
+									  `domicilio_pago` varchar(24) DEFAULT NULL,<br/>
+									  `password` varchar(32) NOT NULL,<br/>
+									  `activo` enum('SI','NO') NOT NULL DEFAULT 'SI',<br/>
+									  PRIMARY KEY (`nif`)<br/>
+									) ENGINE=InnoDB DEFAULT CHARSET=utf8;<br/><br/>
+
+									--<br/>
+									-- Bolcant dades de la taula `usuarios`<br/>
+									--<br/><br/>
+
+									INSERT INTO `usuarios` (`nif`, `nombre`, `apellidos`, `direccion`, `CP`, `poblacion`, `telefono`, `mail`, `imagen`, `domicilio_pago`, `password`, `activo`)<br/>
+									VALUES ('38080266V', 'Josep Maria', 'Marín Salvador', 'c/ el meu carrer, 25', 8700, 'Igualada', 938041234, 'jmarinsa@gmail.com', NULL, 'ES2420770508221100223344', '27e5618d034927c42e71e422566c112a', 'SI');<br/><br/>
+
+									/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;<br/>
+									/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;<br/>
+									/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;<br/>
+								</p>
+								<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+								<br/>
+							<h4 id="T53">5.3 - Introducir datos en Base de Datos</h4>
+								<p class="textH3">
+									La aplicación que ha adquirido, posee un sistema fàcil para introducir los datos que desea en la base de datos y tratar con ellos.<br />
+									Vea los puntos:<br /><br />
+										<ul class="liH3">
+											<li><h5>1.2 - Dar de alta un nuevo usuario</h6></li>
+
+											<li><a href="#T2"><h5>2 - Personalización</h5></a></li>
+											<li><a href="#T21"><h5>2.1 - Colocar su logotipo en la portada</h6></li>
+											<li><a href="#T22"><h5>2.2 - Personalizar imagen de la portada</h6></li>
+
+											<li><a href="#T414"><h5>4.1.4 - Añadir un Usuarios</h7></a></li>
+
+											<li><a href="#T424"><h5>4.2.4 - Añadir un Cliente</h7></a></li>
+
+											<li><a href="#T434"><h5>4.3.4 - Añadir un Proveedores</h7></a></li>
+
+											<li><a href="#T444"><h5>4.4.4 - Añadir un Productos</h7></a></li>
+
+											<li><a href="#T454"><h5>4.5.4 - Añadir un Categorias</h7></a></li>
+
+											<li><a href="#T464"><h5>4.6.4 - Añadir un Presupuestos</h7></a></li>
+
+											<li><a href="#T474"><h5>4.7.4 - Añadir un Pedidos</h7></a></li>
+
+											<li><a href="#T484"><h5>4.8.4 - Añadir un Facturas</h7></a></li>
+										</ul>
+								</p>
+							<h4 id="T54">5.4 - Modificar datos en Base de Datos</h4>
+								<p class="textH3">
+									La aplicación que ha adquirido, posee un sistema fàcil para modificar los datos que desea en la base de datos y tratar con ellos.<br />
+									Vea los puntos:<br /><br />
+									<ul class="liH3">
+
+										<li><a href="#T2"><h5>2 - Personalización</h5></a></li>
+										<li><a href="#T23"><h5>2.3 - Modificar color: de fondo y de botones</h6></a></li>
+
+										<li><a href="#T413"><h5>4.1.3 - Modificar datos de un Usuarios</h7></a></li>
+										<li><a href="#T415"><h5>4.1.5 - Desactivar Usuarios</h7></a></li>
+
+										<li><a href="#T423"><h5>4.2.3 - Modificar datos de un Cliente</h7></a></li>
+										<li><a href="#T425"><h5>4.2.5 - Desactivar Cliente</h7></a></li>
+
+										<li><a href="#T433"><h5>4.3.3 - Modificar datos de un Proveedores</h7></a></li>
+										<li><a href="#T435"><h5>4.3.5 - Desactivar Proveedores</h7></a></li>
+
+										<li><a href="#T443"><h5>4.4.3 - Modificar datos de un Productos</h7></a></li>
+										<li><a href="#T445"><h5>4.4.5 - Desactivar Productos</h7></a></li>
+
+										<li><a href="#T453"><h5>4.5.3 - Modificar datos de un Categorias</h7></a></li>
+										<li><a href="#T455"><h5>4.5.5 - Desactivar Categorias</h7></a></li>
+
+										<li><a href="#T463"><h5>4.6.3 - Modificar datos de un Presupuestos</h7></a></li>
+										<li><a href="#T465"><h5>4.6.5 - Desactivar Presupuestos</h7></a></li>
+
+										<li><a href="#T473"><h5>4.7.3 - Modificar datos de un Pedidos</h7></a></li>
+										<li><a href="#T475"><h5>4.7.5 - Desactivar Pedidos</h7></a></li>
+
+										<li><a href="#T483"><h5>4.8.3 - Modificar datos de un Facturas</h7></a></li>
+										<li><a href="#T485"><h5>4.8.5 - Desactivar Facturas</h7></a></li>
+									</ul>
+								</p>
+							<h4 id="T55">5.5 - Borrar datos en Base de Datos</h4>
+								<p class="textH3">
+									La aplicación que ha adquirido, posee un sistema fàcil para eliminar los datos que desea en la base de datos.<br />
+									Vea los puntos:<br /><br />
+									<ul class="liH3">
+										<li><a href="#T415"><h5>4.1.5 - Desactivar Usuarios</h7></a></li>
+
+										<li><a href="#T425"><h5>4.2.5 - Desactivar Cliente</h7></a></li>
+
+										<li><a href="#T435"><h5>4.3.5 - Desactivar Proveedores</h7></a></li>
+
+										<li><a href="#T445"><h5>4.4.5 - Desactivar Productos</h7></a></li>
+
+										<li><a href="#T455"><h5>4.5.5 - Desactivar Categorias</h7></a></li>
+
+										<li><a href="#T465"><h5>4.6.5 - Desactivar Presupuestos</h7></a></li>
+
+										<li><a href="#T475"><h5>4.7.5 - Desactivar Pedidos</h7></a></li>
+
+										<li><a href="#T485"><h5>4.8.5 - Desactivar Facturas</h7></a></li>
+									</ul>
+								</p>
+								<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+								<br/>
+		</div>
+	</div>
+	<div id="peu">
+		<p id="intro">
+			Esperamos que disfrute con esta nueva aplicación que ha adquirido y que le sea de gran utilidad para su empresa.<br /><br />
+			Asimismo, confiamos que el <b>"Manual de Uso de la aplicación Back-End"</b> haya sido interesante y clarificador para el entendimiento y la mejora del manejo de la aplicación "Back-End".<br /><br />
+			Para cualquier duda o consulta no dude en ponerse en contacto con nosotros:<br />
+				<ul id="intro">
+					<center><li>web: <a href><b>www.notepiensoexplicarmas.com</b></a></li></center>
+					<center><li>e-mail: <a href><b>espabilaaaprender@comollevartunegocio.ya</b></a></li></center>
+					<center><li>telef: <a href><b>123 456 789</b></a></li></center>
+				</ul>
+		</p>
+		<p class="volver"><a href="#logo">volver a menú lateral</a></p>
+		<br/>
+	</div>
+	
+</body>
+</html>

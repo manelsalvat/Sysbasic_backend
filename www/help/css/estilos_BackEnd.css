@@ -1,0 +1,163 @@
+body{
+	background-color: #FFF;
+	font-family: Tahoma;
+}
+
+ul{
+	list-style: none;
+}
+#index{
+	font-size: 30px;
+	color: #FFF;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6, h7 {
+	font-weight: bold;
+}
+h1{
+	font-weight: bold;
+	font-size: 32px;
+	color: #777;
+}
+h2{
+	font-size: 25px;
+	color: #009;
+}
+h3{
+	font-size: 20px;
+	color: #03C;
+}
+h4{
+	font-size: 18px;
+	font-weight: lighter;
+	color: #06F;
+}
+h5 {
+	font-size: 14px;
+	font-weight: lighter;
+}
+
+h6 {
+	font-size: 11px;
+	padding-left: 10px;
+	font-weight: lighter;
+}
+h7{
+	font-size: 9px;
+	padding-left: 15px;
+	font-weight: lighter;
+}
+
+.textH2, .textH3, .textH4 {
+	font-size: 14px;
+}
+.textH2 {
+	padding-left: 40px;
+}
+.textH3, #img_arbre {
+	padding-left: 55px;
+}
+.liH3{
+	font-size: 12px;
+	padding-left: 150px;
+}
+.textH4{
+	padding-left: 65px;
+}
+.liH4{
+	font-size: 12px;
+	padding-left: 150px;
+}
+
+.volver, #intro {
+	font-family: courier;
+	font-weight: bolder;
+}
+.volver {
+	font-size: 15px;
+	text-align: right;
+}
+#intro {
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+.nota {
+	font-family: courier;
+	font-size: 11px;
+	color: #900;
+	font-weight: bolder;
+	padding-left: 55px;
+}
+
+a:link{
+	text-decoration: none;
+	color: #900;
+}
+a:visited{
+	color: #900;
+}
+a:hover{
+	color: #069;
+}
+
+#cap{
+	width: 1000px;
+	height: 200px;
+	margin: 0 auto;
+}
+	#logo{
+		width: 200px;
+		height: 150px;
+		float: left;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 0px;
+	}
+	#capcelera{
+		width: 775px;
+		height: 150px;
+		float: right;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 0px;
+	}
+
+#cos{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+	#latIZQ{
+		width: 180px;
+		height: 100%;
+		float: left;
+		padding-right: 30px;
+		background-color: #FCC;
+	}
+	#central{
+		width: 750px;
+		height: 100%;
+		float: right;
+		padding-left: 30px;
+		background-color: #FFF;
+	}
+	.img_deApuntes1{
+		width: 600px;
+		padding-left: 65px;
+	}
+	.img_deApuntes2{
+		width: 200px;
+		padding-left: 65px;
+	}
+
+#peu{
+	width: 1100px;
+	height: 150px;
+	float: right;
+	padding-top: 50px;
+	padding-left: 25px;
+
+}
+

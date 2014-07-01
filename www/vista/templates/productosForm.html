@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    {header}
+
+    <body>
+
+        {top_menu}
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-10">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{entity}</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <form method='POST' action='app.php'>
+                                <input type='hidden' name='action' value='login2' />
+                                <label>Código: </label>
+                                <input type='number' size='10' name='codigo' value='{codigo}' required />
+                                <br />
+                                <label>Nombre:</label>
+                                <input type='text' size='30' name='nombre' value='{nombre}' required />
+                                <br />
+                                <label>Marca:</label>    
+                                <input type='text' size='30' name='marca' value='{marca}' />
+                                <br />
+                                <label>Descripción:</label>
+                                <textarea name='descripcion' cols='51' rows='5' value='{descripcion}'></textarea>
+                                <br />
+                                <label>Precio:</label>
+                                <input type='number' size='11' name='precio' value='{precio}' required='required' />
+                                <br />
+                                <label>Tipo de IVA:</label>
+                                <select name='id_iva'>{id_iva}</select>
+                                <br />   
+                                <label>Porcentaje de descuento:</label>
+                                <input type='number' size='5' name='descuento' value='{descuento}' />
+                                <br />
+                                <label>Unidad de medida:</label>
+                                <input type='text' size='10' name='unidad_de_medida' value='{unidad_de_medida}' />
+                                <br />
+                                <label>Stock:</label>
+                                <input type='number' size='10' name='estoc' value='{estoc}' />
+                                <br />
+                                <label>Activo:</label>
+                                <input type='checkbox' name='vendible' value='{vendible}' />
+                                <br />
+                                <label>Favorito:</label>
+                                <input type='Checkbox' name='favorito' value='{favorito}' />
+                                <br />
+                                <label>Categoria:</label>
+                                <select name='id_categoria'>{id_categoria}</select>
+                                <br />
+                                <label>Imagen:</label>
+                                <input type="file" name='{imagen}' />
+                                <br />
+                                <button type='submit' name='submit'/>Grabar</button>
+                                <button type='reset' name='reset' />Nuevo</button>
+                            </form> 
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

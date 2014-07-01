@@ -40,7 +40,7 @@ if (filter_input(INPUT_POST, 'action')) {
             $visible_entity_property = $entity_class->get_visble_columns();
             $entity_data = db::get_columns_value($visible_entity_property, NULL);
 
-            renderPage($entity,$visible_entity_property, $entity_data);
+            renderPage($entity, $visible_entity_property, $entity_data);
             break;
 
         case 'showByCategory':
@@ -50,7 +50,7 @@ if (filter_input(INPUT_POST, 'action')) {
             $visible_entity_property = $entity_class->get_visble_columns();
             $entity_data = $entity_data = db::get_columns_value($visible_entity_property, filter_input(INPUT_POST, 'id'));
 
-            renderPage('productos',$visible_entity_property, $entity_data);
+            renderPage('productos', $visible_entity_property, $entity_data);
 
             break;
 
@@ -69,21 +69,21 @@ if (filter_input(INPUT_POST, 'action')) {
     }
 }
 
-function renderPage($entity,$visible_entity_property, $entity_data) {
-    $data=array();
-    
+function renderPage($entity, $visible_entity_property, $entity_data) {
+    $data = array();
+
     session_start();
     $data['entity'] = $entity;
     $data['user'] = $_SESSION['user'];
     $data['header'] = View::getHeader();
     $data['top_menu'] = View::getTopMenu($_SESSION['user']);
     //show category Menu
-            if ($entity === 'productos') {
-                $category_data = db::get_values_by_tableName('categorias');
-                $data['category_menu'] = View::getCategory_menu($category_data);
-            } else {
-                $data['category_menu'] = '';
-            }
+    if ($entity === 'productos') {
+        $category_data = db::get_values_by_tableName('categorias');
+        $data['category_menu'] = View::getCategory_menu($category_data);
+    } else {
+        $data['category_menu'] = '';
+    }
     $data['table_head_tr'] = View::get_table_head($visible_entity_property);
     $data['table_body_rows'] = View::get_table_body($entity_data);
 
@@ -93,13 +93,16 @@ function renderPage($entity,$visible_entity_property, $entity_data) {
 
 function showForm($entity, $id) {
 
-    db::init();
-    db::setTable($entity);
-
+//    db::init();
+//    db::setTable($entity);
+    $data = array();
     $entity_class = new $entity();
     $entity_property = $entity_class->getProperty();
-    $data = $entity_class->get_from_table($entity_property[0], $id);
-    //$entity_class->getProperty_Values();
+    $entity_data = $entity_class->get_from_table($entity_property[0], $id);
+    foreach ($entity_data[0] as $key => $value) {
+        $data[$key] = $value;
+    }
+  
     session_start();
 
     $data['user'] = $_SESSION['user'];

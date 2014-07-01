@@ -244,9 +244,10 @@ class View {
                         </ul> 
                          <div class="nav nav-pills pull-right navbar-inverse menu-top">
                             <p class="label label-sm"><b>' . $user . '</b></p>
-                                <button class="btn btn-default btn-sm"  name="action" value="logout">Salir</a>
+                                <button class="btn btn-default btn-sm"  name="action" value="logout">Salir</button>
                             <p class="label label-sm"><b>  </b>
                             </p><a class="btn btn-danger btn-sm"  href="process.php/?action=config">Configuracion</a> 
+                            <a class="btn btn-danger btn-sm" href="./help/Manual-BackEnd.html">?</a> 
                         </div></form>
         <hr>
                     </div>
