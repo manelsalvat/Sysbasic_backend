@@ -1,37 +1,94 @@
 <!-- fet: Manel 27/6/14 18:30 -->
 <!--//revisat MIREIA fet el 30/06/2014-->
-<html>
-<body>
-<form method='POST' action='app.php'>
-	<input type='hidden' name='action' value='login2' />
-    <label><h1>Formulari Clients</h1></label><br/>
-    <label>NIF</label> 				
-    	<input type='text' size='9'  	name='nif'	value='{nif}' required />	<br />
-	<label>Nombre</label>
-		<input type='text' size='20' 	name='nombre' maxlength='20' value='{nombre}' 	required />	<br />
-	<label>Apellidos</label>
-		<input type='text'   size='50' 	name='apellidos'			value='{apellidos}' required />	<br />
-	<label>Direcci&oacute;n</label>	
-		<input type='text'   size='50' 	name='direccion' 			value='{direccion}' required />	<br />
-	<label>CP</label>
-		<input type='text' size='5'  	name='CP' 					value='{CP}'		required />	<br />
-	<label>Poblaci&oacute;n</label>
-		<input type='text'   size='20' 	name='poblacion'			value='{poblacion}' required /> <br />
-	<label>Tel&eacute;fono</label>
-		<input type='text' size='9'  	name='telefono' 			value='{telefono}'			 />	<br />
-	<label>E-mail</label>
-		<input type='email'  size='20' 	name='mail'  maxlength='40' value='{mail}'		required /> <br />
-	<label>Imagen</label>
-	    <input type='file' name='imagen' value='{imagen}'			 /> <br />
-	<label>Domicilio de Pago</label>
-		<input type='text' size='24' 	name='domicilio_pago' 		value='{domicilio_de_pago}' /> <br />
-	<label>Est&aacute; activo</label>
-		<input type='checkbox' 	  	   name='activo' 				value='{activo}'			 /> <br />
-	<label>Recargo de Equivalencia<label>
-		<input type='checkbox' name='recargo_equivalencia' value='recargo_equivalencia'			 /> <br />
-	<br />
-	<button type='submit' name='submit'	/>Grabar</button>
-	<button type='reset'  name='reset' 	/>Nuevo</button>
-</form>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{entity}</title>
+ 
+    <!-- CSS de Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+ 
+    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<form method="POST" action="./process.php" class="form-horizontal" role="form">
+  <div class="form-group">
+    <h1><label for='disabledTextInput' class='col-lg-7 control-label'>Formulari Clients</label></h1></div>
+     <div class="form-group">
+    <label for='disabledTextInput' class='col-lg-1 control-label'>NIF:</label> 			<div class="col-lg-5">	
+    	<input type='text' name='nif'	value='{nif}' required />
+    </div>
+    	</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Nombre:</label>
+	<div class="col-lg-5">	
+		<input type='text' name='nombre' value='{nombre}' required /></div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Apellidos:</label>
+	<div class="col-lg-5">	
+		<input type='text' name='apellidos'	value='{apellidos}' required />	</div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Direcci&oacute;n:</label>	<div class="col-lg-5">	
+		<input type='text' name='direccion' value='{direccion}' required /></div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>CP:</label>
+	<div class="col-lg-5">	
+		<input type='text' name='CP' value='{CP}' required />
+	</div>
+	</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Poblaci&oacute;n:</label><div class="col-lg-5">	
+		<input type='text' name='poblacion'	value='{poblacion}' required /></div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Tel&eacute;fono:</label><div class="col-lg-5">	
+		<input type='text' name='telefono' value='{telefono}'/>
+	</div>
+	</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>E-mail:</label>
+	<div class="col-lg-5">	
+		<input type='email' name='mail' value='{mail}' required /></div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Imagen:</label>
+	<div class="col-lg-5">	
+            <input type='file' name='imagen' accept="image/*" src="{imagen}"  /> 
+	</div>
+	</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Domicilio de Pago:</label><div class="col-lg-2">	
+		<input type='text' name='domicilio_pago' value='{domicilio_pago}' /></div>
+		</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-1 control-label'>Est&aacute; activo</label><div class="col-lg-3">	
+		<input type='checkbox' name='activo' value='{activo}'/>
+	</div>
+	</div>
+  <div class="form-group">
+	<label for='disabledTextInput' class='col-lg-2 control-label'>Recargo de Equivalencia:<label><div class="col-lg-1">	
+	<input type='checkbox' name='recargo_equivalencia' value='recargo_equivalencia'/> 
+	</div>
+   </div>   
+    <label class="checkbox" 'col-lg-1 control-label'>
+    <input type="checkbox" name="recordar" value="recordar">Recordarme</label><br></br> 
+     <div class="form-group">
+    <div class="col-lg-offset-1 col-lg-20">  
+    <button type='submit' class='btn btn-primary' name='submit'/>Grabar</button>
+    <button type='reset' class='btn btn-primary' name='reset' />Nuevo</button>
+    <input type="hidden" name="action" value="show">
+    <button class="btn btn-primary"  name="show" value="home">Inicio</button>
+</div></div>
+</form> 
+  </body>
 </html>

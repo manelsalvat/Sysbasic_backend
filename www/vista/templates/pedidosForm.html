@@ -1,0 +1,31 @@
+<!-- Josep Maria Marín
+ 27/06/2014
+ formulario pedidos
+-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Pedido:</label>
+    <input type='number' size='10' name='numero_pedido' value='{numero_pedido}' required='required' />
+    <br />
+    <label>Documento:</label>    
+    <input type='number' size='10' name='numero_documento' value='{numero_documento}' required='required' />
+    <br />
+    <label>Dirección de entrega:</label>    
+    <input type='text' size='50' name='direccion_entrega_pedido' value='{direccion_entrega_pedido}' />
+    <br />   
+    <label>Código postal:</label>
+   	<input type='number' size='5' name='CP_entrega_pedido' value='{CP_entrega_pedido}' />
+    <br />
+    <label>Población:</label>
+    <input type='text' size='30' name='poblacion_entrega_pedido' value='{poblacion_entrega_pedido}' />
+    <br />
+    <label>Teléfono:</label>
+    <input type='tel' size='9' name='telefono_entrega_pedido' value='{telefono_entrega_pedido}' />
+    <br />    
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+</form> 
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

@@ -1,0 +1,24 @@
+<!--victoria 27-6-2014 18:45-->
+	<form  method='POST' action='app.php'>
+		<input type='hidden' name='action' value='login2' />
+		<label></label>
+		<p><label>NIF: </label><input type='text' required name='nif' value='{nif}'><br/>
+		<p><label>Nombre: </label><input type='text' required name='nombre' value='{nombre}'><br/>
+		<p><label>Dirección: </label><input type='text' name='direccion' value='{direccion}'><br/>
+		<p><label>CP: </label><input type='text' name='CP' value='{CP}'><br/>
+		<p><label>Población: </label><input type='text' name='poblacion' value='{poblacion}'><br/>
+		<p><label>Telefono: </label><input type='tel' name='telefon' value='{telefono}'><br/>
+		<p><label>Email: </label><input type='email' name='mail' value='{mail}'><br/>
+		<p><label>Adjuntar Imagen: </label><input type='file' name='imagen' value='{imagen}'><br/>
+		<p><label>Persona de contacto: </label><input type='text' name='persona_de_contacto' value='{persona_de_contacto}'><br/>
+		<p><input type='checkbox' checked name='activo' value='{activo}'>Activo<br/>
+	    <button type='reset' name='reset'>Nuevo</button>
+		<button type='submit' name='submit'>Guardar</button><br/>
+        
+	</form>
+	<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>
+</body>
+</html> 

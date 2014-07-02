@@ -1,0 +1,19 @@
+<!-- Josep Maria Marín
+ 27/06/2014
+ formulario provee
+-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Producto:</label>
+    <input type='number' size='10' name='id_producto' value='{id_producto}' required='required' />
+    <br />
+    <label>Proveedor:</label>    
+    <input type='text' size='9' name='id_proveedor' value='{id_proveedor}' required='required' />
+    <br />
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+</form> 
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

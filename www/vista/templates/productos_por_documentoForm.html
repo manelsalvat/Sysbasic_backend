@@ -1,0 +1,43 @@
+<!-- 
+    Josep Maria Marín   27/06/2014
+    Manel Salvat        30/06/2014 
+    formulario productos_por_documento
+-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Documento:</label>
+    <input type='number' size='10' name='numero_documento' value='{numero_documento}' required='required' />
+    <br />
+    <label>Código de producto:</label>    
+    <input type='number' size='10' name='codigo_producto' value='{codigo_producto}' required='required' />
+    <br />
+    <label>Nombre:</label>
+   	<input type='text' size='30' name='nombre_producto' value='{nombre_producto}' required='required' />
+    <br />
+    <label>Marca:</label>
+    <input type='text' size='30' name='marca_producto' value='{marca_producto}' />
+    <br />
+    <label>Descripción:</label>
+    <textarea name='descripcion_producto' cols='51' rows='5' value='{descripcion_producto}'></textarea>
+    <br />
+    <label>Precio:</label>
+    <input type='number' size='11' name='precio_producto' value='{precio_producto}' required='required' />
+    <br />
+    <label>Porcentaje de iva:</label>
+    <input type='number' size='3' name='porcentaje_iva' value='{porcentaje_iva}' required='required' />
+    <br />
+    <label>Cantidad:</label>
+    <input type='number' size='6' name='cantidad' value='{cantidad}' required='required' />
+    <br />
+    <label>Iva:</label>
+	<input type='number' size='7' name='iva' value='{iva}' required='required' />
+    <br />
+    <label>Recargo de equivalencia:</label>
+    <input type='number' size='7' name='recargo_equivalencia' value='{recargo_equivalencia}' />
+    <br />
+    <label>Descuento:</label>
+    <input type='number' size='7' name='descuento' value='{descuento}' />
+    <br />
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+   </form> 

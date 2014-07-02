@@ -1,0 +1,24 @@
+<!--DIEGO RICO GALLARDO 
+    formulario tipo_iva
+    fet 27/06/2014-->
+<form method='POST' action='app.php'>
+<input type='hidden' name='action' />
+     <br>
+    <label>ID de tipo:</label>
+    <input type='text' size='25' name='id de tipo' value='{id_tipo}' required='required'/></br>
+    <br>
+    <label>Nombre de tipo:</label>
+    <input type='text' size='25'name='nombre de tipo'value='{nombre_tipo}' required='required'/></br>
+    <br>
+    <label>Porcentaje:</label>
+    <input type='number' size='25' name='porcentaje' value='{porcentaje}'/></br>
+    <br>
+    <label>Recargo de equivalencia:</label>
+    <input type='number' size='25'name='nombre de tipo'value='{recargo_equivalencia}'/></br>
+<button type='submit' name='submit'/>Grabar</button>
+<button type='reset' name='reset' />Nuevo</button>
+</form>
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

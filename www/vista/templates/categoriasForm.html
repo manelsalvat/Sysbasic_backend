@@ -1,0 +1,16 @@
+<!-- diego fet 27/06/2014-->
+<form method='POST' action='app.php'>
+<input type='hidden' name='action'  />
+     <br>
+    <label>Código:</label>
+    <input type='text' class='form-control' size='20'name='codigo'value='{codigo}'/></br>
+    <br>
+    <label>Nombre:</label>
+    <input type='text' name='nombre' size='20'value='{nombre}'/></br>
+<button type='submit' class="btn btn-primary" name='submit'/>Grabar</button>
+<button type='reset' name='reset' />Nuevo</button>
+</form>
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

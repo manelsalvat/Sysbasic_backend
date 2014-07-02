@@ -1,0 +1,32 @@
+<!-- Josep Maria Marín
+ 27/06/2014
+ formulario documentos
+-->
+<!-- Victoria 30/06 2014 16:10-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Documento:</label>
+    <input type='number' size='10' name='numero' value='{numero}' required='required' />
+    <br />
+    <label>Tipo:</label>    
+    <input type='text' size='3' name='tipo' value='{tipo}' />
+    <br />
+    <label>Fecha:</label>
+   	<input type='date' name='fecha' value='{fecha}' required='required' />
+    <br />
+    <label>Importe:</label>
+    <input type='number' size='11' name='importe' value='{importe}' />
+    <br />
+    <label>Usuario:</label>
+    <input type='text' size='9' name='nif_usuario' value='{nif_usuario}' />
+    <br />
+    <label>Cliente:</label>
+    <input type='text' size='9' name='nif_cliente' value='{nif_cliente}' />
+    <br />
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+</form> 
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

@@ -61,16 +61,22 @@ if (filter_input(INPUT_POST, 'action')) {
 
         case 'save':
             $entity = $actions_array['entity'];
-//            db::init();
-//            db::setTable($entity);
             $entity_class = new $entity();
             foreach ($entity_class as $key => &$value) {
                 $value = $actions_array[$key];
             }
-            var_dump($entity_class);
             $entity_class->save();
             break;
 
+        case 'update':
+            $entity = $actions_array['entity'];
+            $entity_class = new $entity();
+            foreach ($entity_class as $key => &$value) {
+                $value = $actions_array[$key];
+            }
+            $entity_class->update();
+            break;
+            
         default:
             header("refresh:0,url=../../process.php");
             break;
@@ -127,7 +133,7 @@ function showForm($entity, $id) {
         $data['id_iva'] = View::getIva_list($iva_data, $data['id_iva']);
         
     }
-    //var_dump($data);
+  
     View::setData($data);
     $file = $entity . 'Form.html';
     View::showTemplate($file);

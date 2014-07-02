@@ -44,17 +44,26 @@
                                 <label>Stock:</label>
                                 <input type='number' size='10' name='estoc' value='{estoc}' />
                                 <br />
+
                                 <label>Activo:</label>
-                                <input type='checkbox' name='vendible' value='{vendible}' />
+                                <select name='vendible'>
+                                    <option value='Si' >Si</option>
+                                    <option value='No' >No</option>
+                                </select>
+                                <!--input type='checkbox' name='vendible' value='{vendible}' /-->
                                 <br />
                                 <label>Favorito:</label>
-                                <input type='Checkbox' name='favorito' value='{favorito}' />
+                                <!--input type='Checkbox' name='favorito' value='{favorito}' /-->
+                                <select name='favorito'>
+                                    <option value='Si' >Si</option>
+                                    <option value='No' >No</option>
+                                </select>
                                 <br />
                                 <label>Categoria:</label>
                                 <select name='id_categoria'>{id_categoria}</select>
                                 <br />
                                 <label>Imagen:</label>
-                                <input type="file" name='{imagen}' />
+                                <input type="file" name='imagen' value='{imagen}' />
                                 <br />
                                 <button type='submit' name='submit'/>Grabar</button>
                                 <button type='reset' name='reset' />Nuevo</button>

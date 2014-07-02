@@ -1,0 +1,29 @@
+<!-- Josep Maria Marín
+ 27/06/2014
+ formulario facturas
+-->
+<!-- Victoria 30/06 2014 16:20-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Factura:</label>
+    <input type='number' size='10' name='numero_factura' value='{numero_factura}' required />
+    <br />
+    <label>Documento:</label>    
+    <input type='number' size='10' name='numero_documento' value='{numero_documento}' required />
+    <br />
+    <label>Tipo de pago:</label>    
+    <input type='text' size='20' name='tipo_de_pago' value='{tipo_de_pago}' />
+    <br />   
+    <label>Vencimiento:</label>
+   	<input type='date' name='vencimiento' value='{vencimiento}' />
+    <br />
+    <label>Domicilio de pago:</label>
+    <input type='text' size='24' name='domicilio_pago' value='{domicilio_pago}' />
+    <br />
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+</form> 
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

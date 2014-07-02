@@ -203,7 +203,7 @@ class View {
 
 
                     <div class="col-md-12 pull-right">
-                        <div class="col-md-3">
+                        <div class="col-xs-2">
                             <img src="' . self::$path . 'imgs/logo.png" class="img-responsive img-circle" width="200">
                             
                         </div> 
@@ -249,7 +249,7 @@ class View {
                             </p><a class="btn btn-danger btn-sm"  href="process.php/?action=config">Configuracion</a> 
                             <a class="btn btn-danger btn-sm" href="./help/Manual-BackEnd.html">?</a> 
                         </div></form>
-        <hr>
+        
                     </div>
 
                 </div>

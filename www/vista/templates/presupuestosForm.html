@@ -1,0 +1,23 @@
+<!-- 
+    Josep Maria Marín   27/06/2014
+    Manel Salvat        30-06-2014
+ formulario presupuestos
+-->
+<form method='POST' action='app.php'>
+	<input type='hidden' name='action' value='login2' />
+    <label>Presupuesto:</label>
+    <input type='number' size='10' name='numero_presupuesto' value='{numero_presupuesto}' required='required' />
+    <br />
+    <label>Documento:</label>    
+    <input type='number' size='10' name='numero_documento' value='{numero_documento}' required='required' />
+    <br />
+    <label>Dias de validez:</label>    
+    <input type='number' size='3' name='dias_de_validez_presupuesto' value='{dias_de_validez_presupuesto}' />
+    <br />   
+    <button type='submit' name='submit'/>Grabar</button>
+    <button type='reset' name='reset' />Nuevo</button>
+</form> 
+<form method="POST" action="process.php">
+<input type="hidden" name="action" value="show">
+     <button class="btn btn-primary" name="show" value="home">Volver</button>
+</form>

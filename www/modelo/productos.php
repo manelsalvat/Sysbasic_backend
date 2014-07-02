@@ -19,7 +19,7 @@ class Productos extends Entity {
     public $vendible;
     public $favorito;
     public $id_categoria;
-    //protected $image_lnk;
+    public $imagen;
 
     function __construct() {
         
